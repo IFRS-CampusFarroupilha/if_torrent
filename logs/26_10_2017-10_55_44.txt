@@ -1,0 +1,7 @@
+
+	Inicio do log
+
+[26/10/2017]10:55	Erro: javax.imageio.IIOException: Can't read input file!
+		Classe onde está erro: java.lang.Thread
+		Linha do erro: 745
+

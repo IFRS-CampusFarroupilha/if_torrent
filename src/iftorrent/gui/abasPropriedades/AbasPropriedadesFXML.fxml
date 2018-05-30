@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.chart.*?>
+
+<!--
+ * Author: Eduardo Toffolo
+-->
+
+<!-- Painel composto por abas onde reside as informações de um arquivo torrent -->
+<TabPane tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" 
+         xmlns:fx="http://javafx.com/fxml/1" 
+         fx:controller="iftorrent.gui.abasPropriedades.AbasPropriedadesControlador"
+         fx:id="painel_abas">
+    <tabs>
+        <!-- Aba que possui o mapa de pedaços do arquivo torrent -->
+        <Tab fx:id="mapa_pedacos" >
+            <content>
+                <VBox>
+                    <ScrollPane fx:id="painel_com_rolagem">
+                        <!-- Painel que mostra todas os pedaços de um arquivo torrent e seu status -->
+                        <FlowPane fx:id="painel_mapa_pedacos" />
+                    </ScrollPane>
+                    <HBox fx:id="legenda_mapa_pedacos" />
+                </VBox>
+            </content>
+        </Tab>
+        <!-- Aba que possui as informações referentes as informações gerais de um arquivo torrent -->
+        <Tab fx:id="informacoes">
+            <content>
+                <!-- Painel para organizar todos os componentes referente as informações gerais de um arquivo torrent -->
+                <HBox fx:id="painel_info" />
+            </content>
+        </Tab>
+        <!-- Aba que possui as informações referentes aos rastreadores de um arquivo torrent -->
+        <Tab fx:id="pares" >
+            <content>
+                <!-- Tabela que organiza as informações de cada rastreador de um arquivo torrent -->
+                <TableView fx:id="tabela_pares" >
+                    <columns>
+                        <!-- Coluna da tabela responsável pelo numero do par -->
+                        <TableColumn fx:id="coluna_numero" id="coluna_info" />
+                        <!-- Coluna da tabela responsável pelo ip do par -->
+                        <TableColumn fx:id="coluna_ip" id="coluna_info" />
+                        <!-- Coluna da tabela responsável pelo número da porta do par -->
+                        <TableColumn fx:id="coluna_porta" id="coluna_info" />
+                        <!-- Coluna da tabela responsável pelo estado do par (conectado ou não) -->
+                        <TableColumn fx:id="coluna_conectado" id="coluna_info" />
+                        <!-- Coluna da tabela responsável por informar se o par está choked -->
+                        <!-- Nota: choked - o par não enviará nada para nós -->
+                        <TableColumn fx:id="coluna_nos_bloqueando" id="coluna_info" />
+                        <!-- Coluna da tabela responsável por informar se o par está choking -->
+                        <!-- Nota: choking - nós não enviaremos nada para este par -->
+                        <TableColumn fx:id="coluna_bloqueado" id="coluna_info" />
+                        <!-- Coluna da tabela responsável pelo pedaço do par que está baixando -->
+                        <TableColumn fx:id="coluna_pedaco" id="coluna_info" />
+                        
+                    </columns>
+                </TableView>
+            </content>
+        </Tab>
+        <!-- Aba que possui o gráfico referente a velocidade de transferencia de um arquivo torrent -->
+        <Tab fx:id="velocidade" >
+            <content>
+                <!-- Painel em que o gráfico é inserido -->
+                <HBox fx:id="painel_grafico" />
+            </content>
+        </Tab>
+    </tabs>
+</TabPane>

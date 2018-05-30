@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.HBox?>
+
+<!--
+   * Author: Eduardo Toffolo
+-->
+  
+<!-- Painel que organiza a barra menu da janela -->
+<HBox fx:id="painel" xmlns="http://javafx.com/javafx/9.0.1" 
+      xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="iftorrent.gui.barraMenu.BarraMenuControlador">
+    <children>
+        <!-- Barra menu que armazena todos os menus -->
+        <MenuBar fx:id="menu">
+            <menus>
+                <!-- Menu referente aos arquivos -->
+                <Menu fx:id="arquivo">
+                    <items>
+                        <!-- Um MenuItem do Menu -->
+                        <MenuItem fx:id="gerar_novo_arquivo_torrent" onAction="#criar_novo_torrent"/>
+                        <!-- Um MenuItem do Menu -->
+                        <MenuItem fx:id="abrir_arquivo_torrent" onAction="#abrir_arquivo_torrent"/>
+                        <!-- Um MenuItem do Menu -->
+                        <MenuItem fx:id="item_arquivo3" onAction="#abrir_magnet_link"/>
+                        <!-- Um MenuItem do Menu -->
+                        <MenuItem fx:id="verificar_arquivo_torrent" onAction="#verificar_arquivo"/>
+                    </items>
+                </Menu>
+                <!-- Menu referente a visualização de componentes da janela -->
+                <Menu fx:id="visualizar">
+                    <items>
+                        <!-- Um MenuItem do Menu -->
+                        <MenuItem fx:id="item_visualizar1" />
+                        <!-- Um MenuItem do Menu -->
+                        <MenuItem fx:id="item_visualizar2" />
+                        <!-- Um MenuItem do Menu -->
+                        <MenuItem fx:id="alterar_modo_de_exibicao" onAction="#abrir_janela_simples" />
+                    </items>
+                </Menu>
+                <!-- Menu referente as configuracoes do programa -->
+                <Menu fx:id="configuracoes">
+                    <items>
+                        <!-- Um MenuItem do Menu -->
+                        <MenuItem fx:id="item_configuracoes1" />
+                        <!-- Um MenuItem do Menu -->
+                        <MenuItem fx:id="configurar_teclas_de_atalho" onAction="#abrir_janela_atalhos" />
+                        <!-- Um MenuItem do Menu -->
+                        <MenuItem fx:id="configuracoes_gerais" onAction="#abrir_janela_configuracoes"/>
+                        <!-- Um MenuItem do Menu -->
+                        <MenuItem fx:id="item_configuracoes4" />
+                        <!-- Um MenuItem do Menu -->
+                        <MenuItem fx:id="item_configuracoes5" />
+                    </items>
+                </Menu>
+                <!-- Menu referente ao auxílio para o programa -->
+                <Menu fx:id="ajuda">
+                    <items>
+                        <!-- Um MenuItem do Menu -->
+                        <MenuItem fx:id="fazer_um_tour" onAction="#fazer_tour"/>
+                        <!-- Um MenuItem do Menu -->
+                        <MenuItem fx:id="ir_para_pagina_de_ajuda" onAction="#ir_para_site_de_ajuda" />
+                        <!-- Um MenuItem do Menu -->
+                        <MenuItem fx:id="relatar_erro_sugestao" onAction="#abrir_janela_sugestao" />
+                        <!-- Um MenuItem do Menu -->
+                        <MenuItem fx:id="sobre_a_equipe" onAction="#abrir_janela_sobre" />
+                    </items>
+                </Menu>
+                <!-- Link para o site de torrents -->
+                <Menu fx:id="site" />
+            </menus>
+        </MenuBar>
+    </children>
+</HBox>

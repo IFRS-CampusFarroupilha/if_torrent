@@ -1,0 +1,42 @@
+/* 
+ * Author: Eduardo Toffolo
+ *
+ * Arquivo css para modificar as características dos componentes da barra de logoff 
+ */
+
+/*
+ * Objeto: Button
+ * Modifica a coloração de fundo e da borda e o formato do botão
+ */
+#botao_expandir {
+    -fx-background-color: #BBBBBB;
+    -fx-background-radius: 10 0 0 10;
+    -fx-border-color: #666666;
+    -fx-border-radius: 10 0 0 10;
+}
+
+/*
+ * Objeto: HBox
+ * Modifica a coloração de fundo e da borda do painel em que são inseridos os botões
+ */
+#painel {
+    -fx-background-color: #EEEEEE;
+    -fx-border-color: #BBBBBB;
+}
+
+/*
+ * Objeto: Button
+ * Modifica a coloração de fundo e as margens do botão
+ */
+.button {
+    -fx-background-color: transparent;
+    -fx-padding: 3 4 1 4; 
+}
+
+/*
+ * Objeto: Button
+ * Modifica a coloração de fundo quando o mouse está sobre o botão
+ */
+.button:hover {
+    -fx-background-color: F5F5F5;
+}

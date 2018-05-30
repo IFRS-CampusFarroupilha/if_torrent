@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!--
+   * Author: Eduardo Toffolo
+  -->
+
+<!-- Painel onde localiza-se as ferramentas da janela -->
+<BorderPane fx:id="painel"
+            xmlns:fx="http://javafx.com/fxml/1" 
+            xmlns="http://javafx.com/javafx/8" 
+            fx:controller="iftorrent.gui.barraDeFerramentas.BarraDeFerramentasControlador">
+    <right>
+        <!-- Painel que organiza a barra de pesquisa e a barra de logooff -->
+        <BorderPane fx:id="painel_pesquisa_logoff" >
+            <left>
+                <!-- Painel que organiza o campo de pesquisa com sua imagem -->
+                <HBox fx:id="caixa_horizontal2" alignment="CENTER">
+                    <children>
+                        <!-- Menu de opções de filtro com a imagem da barra de pesquisa -->
+                        <MenuButton fx:id="icone_barra_de_pesquisa" />
+                        <!-- Campo de pesquisa de arquivos torrents -->
+                        <TextField fx:id="campo_de_texto" onAction="#acao_pesquisar" />
+                    </children>
+                </HBox>
+            </left>
+            <right>
+                <!-- Painel que organiza a barra de logoff -->
+                <fx:include fx:id="barra_logoff" source="/iftorrent/gui/barraLogoff/BarraLogoffFXML.fxml" />
+            </right>
+        </BorderPane>
+    </right>
+    <left>
+        <!-- Painel que organiza todos os botões da barra de ferramentas -->
+        <HBox fx:id="caixa_horizontal1" alignment="CENTER_LEFT">
+            <children>
+                <!-- Botão para iniciar o download -->
+                <Button fx:id="botao_iniciar" onAction="#acao_iniciar" />
+                <!-- Botão para pausar o download -->
+                <Button fx:id="botao_pausar" onAction="#acao_pausar" />
+                <!-- Botão para parar o download -->
+                <Button fx:id="botao_parar" onAction="#acao_parar" />
+                <!-- Botão para subir o arquivo torrent na fila de download -->
+                <Button fx:id="botao_subir_fila" onAction="#acao_subir_fila" />
+                <!-- Botão para descer o arquivo torrent na fila de download -->
+                <Button fx:id="botao_descer_fila" onAction="#acao_descer_fila" />
+                <!-- Botão para remover o arquivo torrent -->
+                <Button fx:id="botao_remover" onAction="#acao_remover" />
+                <!-- Botão para adicionar um novo arquivo torrent -->
+                <Button fx:id="botao_adicionar_arquivo" onAction="#acao_adicionar_arquivo" />
+                <!-- Botão para inserir um link magnético -->
+                <Button fx:id="botao_link_magnetico" onAction="#acao_link_magnetico" />
+                <!-- Botão para gerar um arquivo torrent -->
+                <Button fx:id="botao_gerar_torrent" onAction="#acao_gerar_torrent" />
+            </children>
+        </HBox>
+    </left>
+</BorderPane>

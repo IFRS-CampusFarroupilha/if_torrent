@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="painel" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iftorrent.gui.barraLateral.BarraLateralControlador">
+   <children>
+      <TreeView fx:id="arvore" focusTraversable="false" onContextMenuRequested="#mouse_clicado" onMouseClicked="#mouse_clicado" />
+   </children>
+</VBox>

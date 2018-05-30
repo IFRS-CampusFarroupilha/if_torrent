@@ -1,0 +1,57 @@
+/* 
+ * Author: Eduardo Toffolo
+ *
+ * Arquivo css para modificar as características dos componentes da barra de 
+ * ferramentas 
+ */
+
+/*
+ * Objeto: TableColumn 
+ * Modifica o alinhamento do conteúdo das colunas das tabelas
+ */
+.table-column {
+    -fx-alignment: CENTER_LEFT;
+}
+
+/*
+ * Objeto: TableCell
+ * Modifica as margens de todas as células das tabelas
+ */
+.table-cell {
+    -fx-padding: 5 3 3 2;
+}
+
+/*
+ * Objeto: TextField
+ * Modifica as margens dos campos de textos
+ */
+.text-field {
+    -fx-padding: 5 5 5 5;
+}
+
+/*
+ * Objeto: HBox 
+ * Modifica o alinhamento do conteúdo da barra inferior da janela
+ */
+#barra_inferior {
+    -fx-alignment: CENTER_RIGHT;
+    -fx-padding: 0 5 0 0;
+}
+
+/*
+ * Objeto: VBox 
+ * Modifica o alinhamento da janela inteira
+ */
+#painel {
+    -fx-alignment: CENTER;
+}
+
+/*
+ * Objeto: HBox 
+ * Modifica o alinhamento do painel onde está a tabela
+ */
+#conteudo {
+    -fx-alignment: CENTER;
+    -fx-padding: 5 5 0 5;
+}
+

@@ -1,0 +1,23 @@
+[2018-04-03T11:58:18.850Z][Debug] Change LogLevel to: Info
+[2018-04-03T11:58:18.902Z][Info] Starting DHT on port 49001
+[2018-04-03T11:58:19.154Z][Info] updating set of valid bind addresses
+ old: []
+ new: [/192.168.7.251, /127.0.0.1, /0.0.0.0]
+[2018-04-03T11:58:19.619Z][Info] Loaded 238 entries from cache. Cache was 113076min old. Reusing old id = true
+[2018-04-03T11:58:19.660Z][Info] selecting default route bind/192.168.7.251
+[2018-04-03T11:58:19.756Z][Info] Starting RPC Server /192.168.7.251 807BF5CB603122D11641FD242C904D8B46D8B992
+[2018-04-03T11:58:19.804Z][Info] Starting DHT on port 49001
+[2018-04-03T11:58:19.805Z][Info] updating set of valid bind addresses
+ old: []
+ new: [/fd3c:29e4:9ddf:e8f8:887a:ff73:61e0:a09a, /fe80:0:0:0:887a:ff73:61e0:a09a%utun1, /fe80:0:0:0:250a:cc8c:be52:30aa%utun0, /fe80:0:0:0:aede:48ff:fe00:1122%en5, /fe80:0:0:0:d4f5:28ff:fe33:ce2%awdl0, /fe80:0:0:0:8c3:7273:99:1baf%en0, /fe80:0:0:0:0:0:0:1%lo0, /0:0:0:0:0:0:0:1, /0:0:0:0:0:0:0:0]
+[2018-04-03T11:58:19.818Z][Info] Loaded 0 entries from cache. Cache was 113076min old. Reusing old id = true
+[2018-04-03T11:58:19.822Z][Info] Last resort address selection/fd3c:29e4:9ddf:e8f8:887a:ff73:61e0:a09a
+[2018-04-03T11:58:19.822Z][Info] Starting RPC Server /fd3c:29e4:9ddf:e8f8:887a:ff73:61e0:a09a 807BF5CB603122D11641FD242C904D8B46D8B992
+[2018-04-03T11:58:24.922Z][Info] force-removing routing table entry ADE6343F 4CEF1973 1404B3BF 8DD9B02F BB88D9B9//136.61.174.56:8999;sent:PT0.249S;seen:PT1884H40M20.787S;age:PT2162H28M58.618S;verified;ver:0x4C540101/LT�� because ID-change was detected; new ID:FF46FEF2 40335F27 9FA013E0 223C7064 B34845FD
+[2018-04-03T11:59:14.224Z][Info] Initated DHT shutdown
+[2018-04-03T11:59:14.233Z][Info] stopping servers
+[2018-04-03T11:59:14.242Z][Info] Stopped RPC Server /192.168.7.251 807BF5CB603122D11641FD242C904D8B46D8B992
+[2018-04-03T11:59:14.242Z][Info] persisting routing table on shutdown
+[2018-04-03T11:59:14.258Z][Info] table persisted
+[2018-04-03T11:59:14.258Z][Info] Initated DHT shutdown
+[2018-04-03T11:59:14.259Z][Info] stopping servers

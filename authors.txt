@@ -1,0 +1,8 @@
+bortolini = Leonardo Bortolini <nejioleo@gmail.com>
+brunetta = Sérgio Brunetta Júnior <sbrunettajr@gmail.com>
+coelho = Rafael Vieira Coelho <rafaelvc2@gmail.com>
+farinon = Otávio Farinon <otaviofarinon@gmail.com>
+garren = Garrenlus de Souza <contato.garren@gmail.com>
+giordani = Guilherme Giordani guilherme_giordani@live.com>
+muller = Gabriel Müller <gabrielmuller2501@gmail.com>
+toffolo = Eduardo Toffolo <edu.oloffot@gmail.com>

@@ -1,0 +1,9 @@
+
+	Inicio do log
+
+[29/11/2017]10:22	Erro: Arquivo não encontrado
+		Classe onde está erro: java.lang.Thread
+		Linha do erro: 745
+
+
+	Fim do log

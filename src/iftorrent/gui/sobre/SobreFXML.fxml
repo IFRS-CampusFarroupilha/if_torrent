@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+<AnchorPane fx:id="janela" prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iftorrent.gui.sobre.SobreControlador">
+   <children>
+      <HBox fx:id="painel" prefHeight="500.0" prefWidth="500.0">
+         <children>
+            <Label fx:id="texto" alignment="CENTER" prefHeight="500.0" prefWidth="500.0" text="Informações" textAlignment="JUSTIFY" textOverrun="CENTER_WORD_ELLIPSIS" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

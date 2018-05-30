@@ -1,0 +1,455 @@
+
+14/01/2018 - 21:17:19
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 0,00%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 0,03%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 0,07%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 0,10%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 0,13%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 0,17%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 0,20%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 0,23%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 0,26%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 0,30%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 0,33%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 0,36%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 0,40%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 0,43%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 0,46%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 0,50%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 0,53%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 0,56%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 0,59%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 0,63%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 0,66%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 0,69%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 0,73%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 0,76%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 0,79%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 0,83%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 0,86%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 0,89%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 0,92%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 0,96%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 0,99%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 1,02%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 1,06%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 1,09%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 1,12%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 1,16%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 1,19%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 1,22%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 1,25%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 1,29%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 1,32%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 1,35%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 1,39%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 1,42%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 1,45%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 1,49%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 1,52%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 1,55%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 1,58%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 1,62%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 1,65%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 1,68%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 1,72%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 1,75%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 1,78%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 1,82%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 1,85%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 1,88%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 1,91%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 1,95%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 1,98%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 2,01%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 2,05%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 2,08%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 2,11%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 2,15%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 2,18%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 2,21%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 2,24%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 2,28%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 2,31%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 2,34%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 2,38%
+
+[14/01/2018]21:20	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 2,41%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 2,44%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 2,48%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 2,51%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 2,54%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 2,58%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 2,61%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 2,64%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 2,67%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 2,71%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 2,74%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 2,77%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 2,81%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 2,84%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 2,87%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 2,91%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 2,94%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 2,97%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 3,00%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 3,04%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 3,07%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 3,10%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 3,14%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 3,17%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 3,20%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 3,24%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 3,27%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 3,30%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 3,33%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 3,37%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 3,40%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 3,43%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 3,47%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 3,50%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 3,53%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 3,57%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 3,60%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 3,63%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 3,66%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 3,70%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 3,73%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 3,76%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 3,80%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 3,83%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 3,86%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 3,90%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 3,93%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 3,96%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 3,99%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 4,03%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 4,06%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 4,09%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 4,13%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 4,16%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 4,19%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 4,23%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 4,26%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 4,29%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 4,32%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 4,36%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 4,39%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 4,42%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 4,46%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 4,49%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 4,52%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 4,56%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 4,59%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 4,62%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 4,66%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 4,69%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 4,72%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 4,75%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 4,79%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 4,82%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 4,85%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 4,89%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 4,92%
+
+[14/01/2018]21:21	Executando: 
+Progresso ubuntu-16.04.3-desktop-amd64.iso: 4,95%

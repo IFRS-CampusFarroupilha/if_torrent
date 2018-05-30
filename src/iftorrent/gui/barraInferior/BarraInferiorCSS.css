@@ -1,0 +1,14 @@
+/* 
+ * Author: Eduardo Toffolo
+ *
+ * Arquivo css para modificar as características dos componentes da barra 
+ * inferior
+ */
+
+/*
+ * Objeto: BorderPane
+ * Modifica a cor da borda
+ */
+#painel {
+    -fx-border-color: #CACACA;
+}

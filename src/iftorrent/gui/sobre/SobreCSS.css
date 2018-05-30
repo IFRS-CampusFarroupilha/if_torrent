@@ -1,0 +1,22 @@
+/* 
+ * Author: Gabriel Müller
+ *
+ * Arquivo css para modificar as características dos componentes da janela
+ * de informações sobre a equipe.
+ */
+
+/*
+ * Objeto: HBox 
+ * Modifica a cor do plano de fundo.
+ */
+#painel {
+    -fx-background-color: black ;
+}
+
+/*
+ * Objeto: Label 
+ * Modifica a cor do texto.
+ */
+#texto{
+    -fx-text-fill: white ;
+}

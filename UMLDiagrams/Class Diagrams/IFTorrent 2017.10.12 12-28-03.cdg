@@ -1,0 +1,2593 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="IFTorrent">
+  <ClassDiagramComponents>
+    <Class name="ConstantesOrdenador" package="iftorrent.ordenador" visibility="public" xPosition="892.0" yPosition="785.0">
+      <Fields>
+        <Field name="EXCECAO1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="OrdenadorRapido" package="iftorrent.ordenador" visibility="public" xPosition="1111.0" yPosition="734.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="ordenar" returnType="void" visibility="public" isStatic="true">
+          <Argument type="List" name="vetor"/>
+        </Method>
+        <Method name="quickSort" returnType="void" visibility="private" isStatic="true">
+          <Argument type="int" name="inicio"/>
+          <Argument type="int" name="fim"/>
+          <Argument type="List" name="vetor"/>
+        </Method>
+        <Method name="separar" returnType="int" visibility="private" isStatic="true">
+          <Argument type="int" name="inicio"/>
+          <Argument type="int" name="fim"/>
+          <Argument type="List&lt;T&gt;" name="vetor"/>
+        </Method>
+        <Method name="trocar" returnType="void" visibility="private" isStatic="true">
+          <Argument type="int" name="posicao1"/>
+          <Argument type="int" name="posicao2"/>
+          <Argument type="List" name="vetor"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="SocketUDP" package="iftorrent.conexao" visibility="public" xPosition="102.0" yPosition="527.0">
+      <Fields>
+        <Field name="lista_envio" type="List&lt;ByteBuffer&gt;" visibility="private"/>
+        <Field name="tamanho_lista" type="int" visibility="private" isFinal="true"/>
+        <Field name="bytes_enviados" type="long" visibility="private"/>
+        <Field name="rodando" type="boolean" visibility="private"/>
+        <Field name="enviando" type="boolean" visibility="private"/>
+        <Field name="socket" type="DatagramChannel" visibility="private"/>
+        <Field name="endereco" type="InetSocketAddress" visibility="private" isFinal="true"/>
+        <Field name="birth" type="long" visibility="private" isFinal="true"/>
+        <Field name="bloqueio" type="boolean" visibility="package"/>
+        <Field name="adicionado" type="boolean" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="package">
+          <Argument type="String" name="endereco_remoto"/>
+          <Argument type="int" name="porta"/>
+          <Argument type="int" name="tamanho_lista"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="envia" returnType="void" visibility="public">
+          <Argument type="ByteBuffer" name="pacote"/>
+        </Method>
+        <Method name="escreve" returnType="void" visibility="private">
+          <Argument type="ByteBuffer" name="pacote"/>
+        </Method>
+        <Method name="run" returnType="void" visibility="public"/>
+        <Method name="envio_final" returnType="void" visibility="public">
+          <Argument type="int" name="limite"/>
+        </Method>
+        <Method name="encerra" returnType="void" visibility="public">
+          <Argument type="TiposFinalizacao" name="tipo"/>
+        </Method>
+        <Method name="obter_enviado" returnType="long" visibility="public"/>
+        <Method name="obter_uptime" returnType="long" visibility="public"/>
+        <Method name="esta_rodando" returnType="boolean" visibility="public"/>
+        <Method name="esta_enviando" returnType="boolean" visibility="public"/>
+        <Method name="obter_endereco_remoto" returnType="String" visibility="public"/>
+        <Method name="obter_porta" returnType="int" visibility="public"/>
+        <Method name="obter_espaco_livre" returnType="int" visibility="public"/>
+        <Method name="lista_esta_vazia" returnType="boolean" visibility="public"/>
+        <Method name="limpa_lista" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="ConectorRastreador" package="iftorrent.conexao" visibility="public" xPosition="770.0" yPosition="263.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Par" package="iftorrent.conexao" visibility="public" xPosition="1021.0" yPosition="20.0">
+      <Fields>
+        <Field name="socket" type="SocketTCP" visibility="private"/>
+        <Field name="limite_atual" type="long" visibility="private"/>
+        <Field name="identificador" type="byte[]" visibility="private"/>
+        <Field name="estatisticas" type="EstatisticasPar" visibility="private"/>
+        <Field name="pedacos" type="byte[]" visibility="private"/>
+        <Field name="requisicoes" type="List&lt;Requisicao&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="package">
+          <Argument type="SocketTCP" name="socket"/>
+          <Argument type="GerenciadorPares" name="gerenciador"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="equals" returnType="boolean" visibility="public">
+          <Argument type="Object" name="objeto"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="GerenciadorPedacos" package="iftorrent.conexao" visibility="public" xPosition="1447.0" yPosition="237.0">
+      <Fields>
+        <Field name="hasher" type="IntegridadeSHA1" visibility="private"/>
+        <Field name="gerenciador_disco" type="GerenciadorDisco" visibility="private"/>
+        <Field name="hashs" type="List&lt;byte[]&gt;" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Requisicao" package="iftorrent.conexao" visibility="public" xPosition="1820.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="ServidorTCP" package="iftorrent.conexao" visibility="public" xPosition="1938.0" yPosition="371.0">
+      <Fields>
+        <Field name="servidor" type="ServerSocketChannel" visibility="private"/>
+        <Field name="monitor" type="MonitorTCP" visibility="private"/>
+        <Field name="rodando" type="boolean" visibility="private"/>
+        <Field name="pausado" type="boolean" visibility="private"/>
+        <Field name="nascimento" type="long" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="package">
+          <Argument type="int" name="porta"/>
+          <Argument type="MonitorTCP" name="monitor"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="recebe" returnType="void" visibility="private"/>
+        <Method name="tempo_de_vida" returnType="long" visibility="public"/>
+        <Method name="run" returnType="void" visibility="public"/>
+        <Method name="pausa" returnType="void" visibility="public">
+          <Argument type="boolean" name="opcao"/>
+        </Method>
+        <Method name="encerra" returnType="long" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Limitador" package="iftorrent.conexao" visibility="public" xPosition="680.0" yPosition="705.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="SocketTCP" package="iftorrent.conexao" visibility="public" xPosition="88.0" yPosition="37.0">
+      <Fields>
+        <Field name="socket" type="SocketChannel" visibility="private"/>
+        <Field name="transicao" type="ByteBuffer" visibility="private"/>
+        <Field name="lista_envio" type="List&lt;ByteBuffer&gt;" visibility="private"/>
+        <Field name="tamanho_lista" type="int" visibility="private" isFinal="true"/>
+        <Field name="enviado" type="long" visibility="private"/>
+        <Field name="birth" type="long" visibility="private" isFinal="true"/>
+        <Field name="rodando" type="boolean" visibility="private"/>
+        <Field name="entrando" type="boolean" visibility="public"/>
+        <Field name="enviando" type="boolean" visibility="private"/>
+        <Field name="adicionado" type="boolean" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="package">
+          <Argument type="int" name="porta_remota"/>
+          <Argument type="String" name="endereco_remoto"/>
+          <Argument type="int" name="tamanho_lista"/>
+        </Constructor>
+        <Constructor visibility="package">
+          <Argument type="SocketChannel" name="canal"/>
+          <Argument type="int" name="tamanho_lista"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="envia" returnType="void" visibility="public">
+          <Argument type="ByteBuffer" name="buffer"/>
+        </Method>
+        <Method name="escreve" returnType="void" visibility="private">
+          <Argument type="ByteBuffer" name="buffer"/>
+        </Method>
+        <Method name="run" returnType="void" visibility="public"/>
+        <Method name="envio_final" returnType="void" visibility="public">
+          <Argument type="int" name="limite"/>
+        </Method>
+        <Method name="encerra" returnType="void" visibility="public">
+          <Argument type="TiposFinalizacao" name="type"/>
+        </Method>
+        <Method name="obter_uptime" returnType="long" visibility="public"/>
+        <Method name="obter_porta_remota" returnType="int" visibility="public"/>
+        <Method name="obter_endereco_remoto" returnType="String" visibility="public"/>
+        <Method name="obter_enviado" returnType="long" visibility="public"/>
+        <Method name="esta_rodando" returnType="boolean" visibility="public"/>
+        <Method name="esta_enviando" returnType="boolean" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="EstatisticasPar" package="iftorrent.conexao" visibility="public" xPosition="1606.0" yPosition="99.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="GerenciadorPares" package="iftorrent.conexao" visibility="public" xPosition="1171.0" yPosition="499.0">
+      <Fields>
+        <Field name="monitor" type="MonitorTCP" visibility="private"/>
+        <Field name="limite_pares" type="int" visibility="private"/>
+        <Field name="pares" type="ArrayList&lt;Par&gt;" visibility="package"/>
+        <Field name="limitador" type="Limitador" visibility="private"/>
+        <Field name="gerenciador_pedacos" type="GerenciadorPedacos" visibility="private"/>
+        <Field name="conector_tracker" type="ConectorRastreador" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="package"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="MonitorTCP" package="iftorrent.conexao" visibility="public" xPosition="1908.0" yPosition="716.0">
+      <Fields>
+        <Field name="seletor" type="Selector" visibility="private"/>
+        <Field name="limite_conexoes" type="int" visibility="private"/>
+        <Field name="servidor" type="ServidorTCP" visibility="private" isFinal="true"/>
+        <Field name="conexoes" type="int" visibility="private"/>
+        <Field name="execucao_servidor" type="Thread" visibility="private"/>
+        <Field name="gerenciador" type="GerenciadorPares" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="package">
+          <Argument type="int" name="porta"/>
+          <Argument type="int" name="limite"/>
+          <Argument type="GerenciadorPares" name="gerenciador"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="inicia_servidor" returnType="void" visibility="public"/>
+        <Method name="existe_no_monitor" returnType="boolean" visibility="public">
+          <Argument type="SocketChannel" name="canal"/>
+        </Method>
+        <Method name="adiciona_conexao" returnType="boolean" visibility="public">
+          <Argument type="SocketChannel" name="canal"/>
+        </Method>
+        <Method name="pausa_servidor" returnType="void" visibility="public">
+          <Argument type="boolean" name="opcao"/>
+        </Method>
+        <Method name="remove_canal" returnType="void" visibility="public">
+          <Argument type="SelectionKey" name="key"/>
+        </Method>
+        <Method name="getLimite_conexoes" returnType="int" visibility="public"/>
+        <Method name="getCanal" returnType="SocketChannel" visibility="public">
+          <Argument type="String" name="endereco"/>
+        </Method>
+        <Method name="setLimite_conexoes" returnType="void" visibility="public">
+          <Argument type="int" name="limite_conexoes"/>
+        </Method>
+        <Method name="obter_seletor" returnType="Selector" visibility="public"/>
+        <Method name="encerra_monitor" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="StringCustom" package="iftorrent.texto" visibility="public" xPosition="2375.0" yPosition="401.0">
+      <Fields>
+        <Field name="MAX_ARRAY_SIZE" type="int" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="string" type="char[]" visibility="private"/>
+        <Field name="tamanho" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="capacidade"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="str"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="CharSequence" name="seq"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="StringCustom" name="str"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="tamanho" returnType="int" visibility="public"/>
+        <Method name="capacidade" returnType="int" visibility="public"/>
+        <Method name="garantirCapacidade" returnType="void" visibility="public">
+          <Argument type="int" name="capacidadeMinima"/>
+        </Method>
+        <Method name="garantirCapacidadeInterna" returnType="void" visibility="private">
+          <Argument type="int" name="capacidadeMinima"/>
+        </Method>
+        <Method name="novaCapaciade" returnType="int" visibility="private">
+          <Argument type="int" name="capacidadeMinima"/>
+        </Method>
+        <Method name="enormeCapacidade" returnType="int" visibility="private">
+          <Argument type="int" name="capacidadeMinima"/>
+        </Method>
+        <Method name="removerEspacos" returnType="void" visibility="public"/>
+        <Method name="setTamanho" returnType="void" visibility="public">
+          <Argument type="int" name="novo_tamanho"/>
+        </Method>
+        <Method name="caractereNa" returnType="char" visibility="public">
+          <Argument type="int" name="pos"/>
+        </Method>
+        <Method name="codePointAt" returnType="int" visibility="public">
+          <Argument type="int" name="pos"/>
+        </Method>
+        <Method name="codePointAntes" returnType="int" visibility="public">
+          <Argument type="int" name="pos"/>
+        </Method>
+        <Method name="codePointCount" returnType="int" visibility="public">
+          <Argument type="int" name="inicio"/>
+          <Argument type="int" name="fim"/>
+        </Method>
+        <Method name="offsetByCodePoints" returnType="int" visibility="public">
+          <Argument type="int" name="pos"/>
+          <Argument type="int" name="codePointOffset"/>
+        </Method>
+        <Method name="getChars" returnType="void" visibility="public">
+          <Argument type="int" name="inicio"/>
+          <Argument type="int" name="fim"/>
+          <Argument type="char[]" name="destino"/>
+          <Argument type="int" name="inicio_destino"/>
+        </Method>
+        <Method name="alterarCaractere" returnType="void" visibility="public">
+          <Argument type="int" name="pos"/>
+          <Argument type="char" name="ch"/>
+        </Method>
+        <Method name="concatenar" returnType="StringCustom" visibility="public">
+          <Argument type="Object" name="obj"/>
+        </Method>
+        <Method name="concatenar" returnType="StringCustom" visibility="public">
+          <Argument type="String" name="str"/>
+        </Method>
+        <Method name="concatenar" returnType="StringCustom" visibility="public">
+          <Argument type="StringBuffer" name="sb"/>
+        </Method>
+        <Method name="concatenar" returnType="StringCustom" visibility="public">
+          <Argument type="StringCustom" name="custom"/>
+        </Method>
+        <Method name="concatenar" returnType="StringCustom" visibility="public">
+          <Argument type="CharSequence" name="seq"/>
+        </Method>
+        <Method name="concatenaNull" returnType="StringCustom" visibility="private"/>
+        <Method name="concatenar" returnType="StringCustom" visibility="public">
+          <Argument type="CharSequence" name="seq"/>
+          <Argument type="int" name="inicio"/>
+          <Argument type="int" name="fim"/>
+        </Method>
+        <Method name="concatenar" returnType="StringCustom" visibility="public">
+          <Argument type="char[]" name="str"/>
+        </Method>
+        <Method name="concatenar" returnType="StringCustom" visibility="public">
+          <Argument type="char" name="str"/>
+          <Argument type="int" name="pos"/>
+          <Argument type="int" name="t"/>
+        </Method>
+        <Method name="concatenar" returnType="StringCustom" visibility="public">
+          <Argument type="boolean" name="b"/>
+        </Method>
+        <Method name="concatenar" returnType="StringCustom" visibility="public">
+          <Argument type="char" name="caractere"/>
+        </Method>
+        <Method name="concatenar" returnType="StringCustom" visibility="public">
+          <Argument type="int" name="i"/>
+        </Method>
+        <Method name="concatenar" returnType="StringCustom" visibility="public">
+          <Argument type="long" name="l"/>
+        </Method>
+        <Method name="concatenar" returnType="StringCustom" visibility="public">
+          <Argument type="float" name="f"/>
+        </Method>
+        <Method name="concatenar" returnType="StringCustom" visibility="public">
+          <Argument type="double" name="d"/>
+        </Method>
+        <Method name="deletar" returnType="StringCustom" visibility="public">
+          <Argument type="int" name="inicio"/>
+          <Argument type="int" name="fim"/>
+        </Method>
+        <Method name="deletarCaractereNa" returnType="StringCustom" visibility="public">
+          <Argument type="int" name="posicao"/>
+        </Method>
+        <Method name="alterar" returnType="StringCustom" visibility="public">
+          <Argument type="int" name="inicio"/>
+          <Argument type="int" name="fim"/>
+          <Argument type="String" name="str"/>
+        </Method>
+        <Method name="substring" returnType="String" visibility="public">
+          <Argument type="int" name="inicio"/>
+        </Method>
+        <Method name="subsequencia" returnType="CharSequence" visibility="public">
+          <Argument type="int" name="inicio"/>
+          <Argument type="int" name="fim"/>
+        </Method>
+        <Method name="substring" returnType="String" visibility="public">
+          <Argument type="int" name="inicio"/>
+          <Argument type="int" name="fim"/>
+        </Method>
+        <Method name="inserir" returnType="StringCustom" visibility="public">
+          <Argument type="int" name="pos"/>
+          <Argument type="char[]" name="vet"/>
+          <Argument type="int" name="posicao_primeiro_elemento"/>
+          <Argument type="int" name="quantidade_elementos"/>
+        </Method>
+        <Method name="inserir" returnType="StringCustom" visibility="public">
+          <Argument type="int" name="pos"/>
+          <Argument type="Object" name="obj"/>
+        </Method>
+        <Method name="inserir" returnType="StringCustom" visibility="public">
+          <Argument type="int" name="pos"/>
+          <Argument type="String" name="str"/>
+        </Method>
+        <Method name="inserir" returnType="StringCustom" visibility="public">
+          <Argument type="int" name="pos"/>
+          <Argument type="char[]" name="vet"/>
+        </Method>
+        <Method name="inserir" returnType="StringCustom" visibility="public">
+          <Argument type="int" name="pos"/>
+          <Argument type="CharSequence" name="seq"/>
+        </Method>
+        <Method name="inserir" returnType="StringCustom" visibility="public">
+          <Argument type="int" name="pos"/>
+          <Argument type="CharSequence" name="seq"/>
+          <Argument type="int" name="inicio_seq"/>
+          <Argument type="int" name="fim_seq"/>
+        </Method>
+        <Method name="inserir" returnType="StringCustom" visibility="public">
+          <Argument type="int" name="posicao"/>
+          <Argument type="boolean" name="b"/>
+        </Method>
+        <Method name="inserir" returnType="StringCustom" visibility="public">
+          <Argument type="int" name="pos"/>
+          <Argument type="char" name="c"/>
+        </Method>
+        <Method name="inserir" returnType="StringCustom" visibility="public">
+          <Argument type="int" name="pos"/>
+          <Argument type="int" name="i"/>
+        </Method>
+        <Method name="inserir" returnType="StringCustom" visibility="public">
+          <Argument type="int" name="pos"/>
+          <Argument type="long" name="l"/>
+        </Method>
+        <Method name="inserir" returnType="StringCustom" visibility="public">
+          <Argument type="int" name="pos"/>
+          <Argument type="float" name="f"/>
+        </Method>
+        <Method name="inserir" returnType="StringCustom" visibility="public">
+          <Argument type="int" name="pos"/>
+          <Argument type="double" name="d"/>
+        </Method>
+        <Method name="contemNa" returnType="int" visibility="public">
+          <Argument type="String" name="str"/>
+        </Method>
+        <Method name="contemNa" returnType="int" visibility="public">
+          <Argument type="String" name="str"/>
+          <Argument type="int" name="apartir_de"/>
+        </Method>
+        <Method name="ultimaOcorrenciaDe" returnType="int" visibility="public">
+          <Argument type="String" name="str"/>
+        </Method>
+        <Method name="ultimaOcorrenciaDe" returnType="int" visibility="public">
+          <Argument type="String" name="str"/>
+          <Argument type="int" name="apartir_de"/>
+        </Method>
+        <Method name="inverter" returnType="StringCustom" visibility="public"/>
+        <Method name="reverseAllValidSurrogatePairs" returnType="void" visibility="private"/>
+        <Method name="getString" returnType="char[]" visibility="package" isFinal="true"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="IFTorrent" package="iftorrent" visibility="public" xPosition="2620.0" yPosition="64.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ClasseNaoEncontradaExcecao" package="iftorrent.excecoes" visibility="public" xPosition="102.0" yPosition="1049.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="string"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="string"/>
+          <Argument type="Throwable" name="thrwbl"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Throwable" name="thrwbl"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="CodificacaoNaoSuportadaExcecao" package="iftorrent.excecoes" visibility="public" xPosition="846.0" yPosition="1049.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="IndiceInvalidoExcecao" package="iftorrent.excecoes" visibility="public" xPosition="1145.0" yPosition="1049.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="index"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="s"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="ConstantesExcecoes" package="iftorrent.excecoes" visibility="public" xPosition="1209.0" yPosition="1210.0">
+      <Fields>
+        <Field name="INDICE_INVALIDO1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="REFERENCIA_NULA1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="CONVERTER_CLASSE1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="BANCO_DE_DADOS1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="FORMATO_DO_NUMERO1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="ARGUMENTO_ILEGAL1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="CLASSE_NAO_ENCONTRADA1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="SINTAXE_SQL1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="INSERCAO_DE_DADOS" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="ARITMETICO1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="ARQUIVO_NAO_ENCONTRADO1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="S_O_NAO_SUPORTADO1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="ENUM_NAO_ENCONTRADA1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="CODIFICACAO_NAO_ENCONTRADA1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="ReferenciaNulaExcecao" package="iftorrent.excecoes" visibility="public" xPosition="556.0" yPosition="1049.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="string"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="AritmeticoExcecao" package="iftorrent.excecoes" visibility="public" xPosition="664.0" yPosition="1210.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="string"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="SintaxeSQLException" package="iftorrent.excecoes" visibility="public" xPosition="1962.0" yPosition="1210.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="reason"/>
+          <Argument type="String" name="SQLState"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="reason"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="InsercaoDeDadosExcecao" package="iftorrent.excecoes" visibility="public" xPosition="1399.0" yPosition="1049.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="string"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="SistemaOperacionalNaoSuportadoExcecao" package="iftorrent.excecoes" visibility="public" xPosition="102.0" yPosition="1210.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="mensagem"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="mensagem"/>
+          <Argument type="Throwable" name="causa"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Throwable" name="causa"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="FormatoDoNumeroExcecao" package="iftorrent.excecoes" visibility="public" xPosition="102.0" yPosition="1374.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="string"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="ESExcecao" package="iftorrent.excecoes" visibility="public" xPosition="412.0" yPosition="1374.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="mensagem"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="File" name="arquivo"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="mensagem"/>
+          <Argument type="Throwable" name="causa"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Throwable" name="causa"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="File" name="arquivo"/>
+          <Argument type="Throwable" name="causa"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="ConverterClasseExcecao" package="iftorrent.excecoes" visibility="public" xPosition="920.0" yPosition="1210.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="string"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="BancoDeDadosExcecao" package="iftorrent.excecoes" visibility="public" xPosition="770.0" yPosition="1374.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="string"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Throwable" name="thrwbl"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="string"/>
+          <Argument type="Throwable" name="thrwbl"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="EnumNaoEncontradaExcecao" package="iftorrent.excecoes" visibility="public" xPosition="1549.0" yPosition="1374.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="mensagem"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="mensagem"/>
+          <Argument type="Throwable" name="causa"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Throwable" name="causa"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="ArgumentoIlegalExcecao" package="iftorrent.excecoes" visibility="public" xPosition="1549.0" yPosition="1210.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="string"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="string"/>
+          <Argument type="Throwable" name="thrwbl"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Throwable" name="thrwbl"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="GerenciadorDisco" package="iftorrent.arquivos" visibility="public" xPosition="2062.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="ManipuladorBinario" package="iftorrent.arquivos" visibility="public" xPosition="2747.0" yPosition="1638.0">
+      <Fields>
+        <Field name="leitor_binario" type="FileInputStream" visibility="private"/>
+        <Field name="escritor_binario" type="FileOutputStream" visibility="private"/>
+        <Field name="leitor_objetos" type="ObjectInputStream" visibility="private"/>
+        <Field name="escritor_objetos" type="ObjectOutputStream" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="arquivo"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="arquivo"/>
+          <Argument type="Modo" name="modo"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="arquivo"/>
+          <Argument type="String" name="sigla"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="arquivo"/>
+          <Argument type="int" name="codigo"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="File" name="arquivo"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="File" name="arquivo"/>
+          <Argument type="Modo" name="modo"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="File" name="arquivo"/>
+          <Argument type="String" name="sigla"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="File" name="arquivo"/>
+          <Argument type="int" name="codigo"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="ler_trecho" returnType="byte[]" visibility="public">
+          <Argument type="int" name="inicio"/>
+          <Argument type="int" name="fim"/>
+        </Method>
+        <Method name="ler_objeto" returnType="Object" visibility="public"/>
+        <Method name="escrever_trecho" returnType="void" visibility="public">
+          <Argument type="byte[]" name="trecho"/>
+        </Method>
+        <Method name="escrever_objeto" returnType="void" visibility="public">
+          <Argument type="Object" name="objeto"/>
+        </Method>
+        <Method name="copia" returnType="ManipuladorBinario" visibility="public"/>
+        <Method name="fechar" returnType="void" visibility="public"/>
+        <Method name="abrir" returnType="void" visibility="public" isFinal="true"/>
+        <Method name="abrir_leitura" returnType="void" visibility="private">
+          <Argument type="File" name="arquivo"/>
+        </Method>
+        <Method name="abrir_escrita" returnType="void" visibility="private">
+          <Argument type="File" name="arquivo"/>
+          <Argument type="boolean" name="anexar"/>
+        </Method>
+        <Method name="fechar_leitura" returnType="void" visibility="private"/>
+        <Method name="fechar_escrita" returnType="void" visibility="private"/>
+      </Methods>
+    </Class>
+    <Class name="Arquivo" package="iftorrent.arquivos" visibility="public" xPosition="3157.0" yPosition="1270.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="copiar_para" returnType="File" visibility="public" isStatic="true">
+          <Argument type="File" name="entrada"/>
+          <Argument type="File" name="saida"/>
+          <Argument type="int" name="inicio"/>
+          <Argument type="int" name="fim"/>
+        </Method>
+        <Method name="ler_trecho" returnType="byte[]" visibility="public" isStatic="true">
+          <Argument type="File" name="arquivo"/>
+          <Argument type="int" name="inicio"/>
+          <Argument type="int" name="fim"/>
+        </Method>
+        <Method name="copiar_para" returnType="File" visibility="public" isStatic="true">
+          <Argument type="File" name="entrada"/>
+          <Argument type="File" name="saida"/>
+          <Argument type="int" name="fim"/>
+        </Method>
+        <Method name="copiar_para" returnType="File" visibility="public" isStatic="true">
+          <Argument type="File" name="entrada"/>
+          <Argument type="File" name="saida"/>
+        </Method>
+        <Method name="copiar_para" returnType="File" visibility="public" isStatic="true">
+          <Argument type="String" name="entrada"/>
+          <Argument type="String" name="saida"/>
+          <Argument type="int" name="inicio"/>
+          <Argument type="int" name="fim"/>
+        </Method>
+        <Method name="copiar_para" returnType="File" visibility="public" isStatic="true">
+          <Argument type="String" name="entrada"/>
+          <Argument type="String" name="saida"/>
+          <Argument type="int" name="fim"/>
+        </Method>
+        <Method name="copiar_para" returnType="File" visibility="public" isStatic="true">
+          <Argument type="String" name="entrada"/>
+          <Argument type="String" name="saida"/>
+        </Method>
+        <Method name="apagar_conteudo" returnType="File" visibility="public" isStatic="true">
+          <Argument type="String" name="arquivo"/>
+        </Method>
+        <Method name="apagar_conteudo" returnType="File" visibility="public" isStatic="true">
+          <Argument type="File" name="arquivo"/>
+        </Method>
+        <Method name="mudar_permissao" returnType="void" visibility="public" isStatic="true">
+          <Argument type="File" name="arquivo"/>
+          <Argument type="int" name="dono"/>
+        </Method>
+        <Method name="mudar_permissao" returnType="void" visibility="public" isStatic="true">
+          <Argument type="File" name="arquivo"/>
+          <Argument type="int" name="dono"/>
+          <Argument type="int" name="outros"/>
+        </Method>
+        <Method name="mudar_permissao" returnType="void" visibility="public" isStatic="true">
+          <Argument type="File" name="arquivo"/>
+          <Argument type="String" name="dono"/>
+        </Method>
+        <Method name="mudar_permissao" returnType="void" visibility="public" isStatic="true">
+          <Argument type="File" name="arquivo"/>
+          <Argument type="String" name="dono"/>
+          <Argument type="String" name="outros"/>
+        </Method>
+        <Method name="mudar_permissao" returnType="void" visibility="public" isStatic="true">
+          <Argument type="File" name="arquivo"/>
+          <Argument type="Permissao" name="dono"/>
+        </Method>
+        <Method name="mudar_permissao" returnType="void" visibility="public" isStatic="true">
+          <Argument type="File" name="arquivo"/>
+          <Argument type="Permissao" name="dono"/>
+          <Argument type="Permissao" name="outros"/>
+        </Method>
+        <Method name="excluir" returnType="void" visibility="public" isStatic="true">
+          <Argument type="File" name="arquivo"/>
+        </Method>
+        <Method name="diretorio" returnType="String" visibility="public" isStatic="true">
+          <Argument type="File" name="arquivo"/>
+        </Method>
+        <Method name="ocultar_arquivo" returnType="void" visibility="public" isStatic="true">
+          <Argument type="File" name="arquivo"/>
+        </Method>
+        <Method name="ocultar_arquivo" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="arquivo"/>
+        </Method>
+        <Method name="desocultar_arquivo" returnType="void" visibility="public" isStatic="true">
+          <Argument type="File" name="arquivo"/>
+        </Method>
+        <Method name="desocultar_arquivo" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="arquivo"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ManipuladorTexto" package="iftorrent.arquivos" visibility="public" xPosition="3381.0" yPosition="2275.0">
+      <Fields>
+        <Field name="leitor_binario" type="InputStream" visibility="private"/>
+        <Field name="leitor_caractere" type="InputStreamReader" visibility="private"/>
+        <Field name="leitor_literal" type="BufferedReader" visibility="private"/>
+        <Field name="escritor_binario" type="OutputStream" visibility="private"/>
+        <Field name="escritor_caractere" type="OutputStreamWriter" visibility="private"/>
+        <Field name="escritor_literal" type="BufferedWriter" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="arquivo"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="arquivo"/>
+          <Argument type="Modo" name="modo"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="arquivo"/>
+          <Argument type="String" name="sigla"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="arquivo"/>
+          <Argument type="int" name="codigo"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="File" name="arquivo"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="File" name="arquivo"/>
+          <Argument type="Modo" name="modo"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="File" name="arquivo"/>
+          <Argument type="String" name="sigla"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="File" name="arquivo"/>
+          <Argument type="int" name="codigo"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="ler_linha" returnType="String" visibility="public"/>
+        <Method name="ler_texto" returnType="String[]" visibility="public"/>
+        <Method name="escrever_linha" returnType="void" visibility="public">
+          <Argument type="String" name="frase"/>
+        </Method>
+        <Method name="escrever_com_quebra_de_linha" returnType="void" visibility="public">
+          <Argument type="String" name="frase"/>
+        </Method>
+        <Method name="escrever_texto" returnType="void" visibility="public">
+          <Argument type="String[]" name="frases"/>
+        </Method>
+        <Method name="copia" returnType="ManipuladorTexto" visibility="public"/>
+        <Method name="fechar" returnType="void" visibility="public"/>
+        <Method name="abrir" returnType="void" visibility="public" isFinal="true"/>
+        <Method name="abrir_leitura" returnType="void" visibility="private">
+          <Argument type="File" name="arquivo"/>
+        </Method>
+        <Method name="abrir_escrita" returnType="void" visibility="private">
+          <Argument type="File" name="arquivo"/>
+          <Argument type="boolean" name="anexar"/>
+        </Method>
+        <Method name="fechar_leitura" returnType="void" visibility="private"/>
+        <Method name="fechar_escrita" returnType="void" visibility="private"/>
+        <Method name="contem" returnType="boolean" visibility="public">
+          <Argument type="String" name="busca"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Logger" package="iftorrent.arquivos" visibility="public" xPosition="2747.0" yPosition="2403.0">
+      <Fields>
+        <Field name="log" type="File" visibility="private" isStatic="true"/>
+        <Field name="nome_log" type="String" visibility="private" isStatic="true"/>
+        <Field name="arquivo" type="ManipuladorTexto" visibility="private" isStatic="true"/>
+        <Field name="em_uso" type="boolean" visibility="private" isStatic="true"/>
+        <Field name="mensagens" type="ListaEncadeada&lt;String&gt;" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="abrir_log" returnType="boolean" visibility="public" isStatic="true"/>
+        <Method name="abrir_log" returnType="boolean" visibility="public" isStatic="true">
+          <Argument type="String" name="diretorio_nome_arquivo"/>
+        </Method>
+        <Method name="escrever" returnType="boolean" visibility="public" isStatic="true">
+          <Argument type="int" name="acontecimento"/>
+          <Argument type="String" name="nome"/>
+        </Method>
+        <Method name="escrever_erro" returnType="boolean" visibility="public" isStatic="true">
+          <Argument type="Exception" name="excecao"/>
+        </Method>
+        <Method name="fechar_log" returnType="boolean" visibility="public" isStatic="true"/>
+        <Method name="escrever_tudo_que_falta" returnType="void" visibility="private" isStatic="true"/>
+        <Method name="repara_erros_arquivos" returnType="void" visibility="private" isStatic="true"/>
+      </Methods>
+    </Class>
+    <Class name="ConstantesArquivos" package="iftorrent.arquivos" visibility="public" xPosition="3817.0" yPosition="2655.0">
+      <Fields>
+        <Field name="FINAL_ARQUIVO" type="int" visibility="public" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="BDecodificador" package="iftorrent.arquivos" visibility="public" xPosition="3817.0" yPosition="2275.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="package"/>
+      </Constructors>
+      <Methods>
+        <Method name="decodifica" returnType="Map" visibility="public">
+          <Argument type="File" name="arquivo"/>
+        </Method>
+        <Method name="decodifica" returnType="Map" visibility="public">
+          <Argument type="byte[]" name="dados"/>
+        </Method>
+        <Method name="decodifica" returnType="Map" visibility="public">
+          <Argument type="ByteArrayInputStream" name="dados"/>
+        </Method>
+        <Method name="decodifica" returnType="Map" visibility="public">
+          <Argument type="BufferedInputStream" name="dados"/>
+        </Method>
+        <Method name="decodifica" returnType="Object" visibility="public">
+          <Argument type="InputStream" name="dados"/>
+        </Method>
+        <Method name="getNumero" returnType="long" visibility="public">
+          <Argument type="InputStream" name="dados"/>
+          <Argument type="char" name="fim"/>
+        </Method>
+        <Method name="getString" returnType="byte[]" visibility="public">
+          <Argument type="InputStream" name="dados"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Manipulador" package="iftorrent.arquivos" visibility="public" isAbstract="true" xPosition="4075.0" yPosition="1743.0">
+      <Fields>
+        <Field name="arquivo" type="File" visibility="protected"/>
+        <Field name="modo" type="Modo" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="File" name="arquivo"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="File" name="arquivo"/>
+          <Argument type="Modo" name="modo"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="arquivo"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="arquivo"/>
+          <Argument type="Modo" name="modo"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="mudar_permissao" returnType="void" visibility="public">
+          <Argument type="int" name="dono"/>
+        </Method>
+        <Method name="mudar_permissao" returnType="void" visibility="public">
+          <Argument type="int" name="dono"/>
+          <Argument type="int" name="outros"/>
+        </Method>
+        <Method name="mudar_permissao" returnType="void" visibility="public">
+          <Argument type="String" name="dono"/>
+        </Method>
+        <Method name="mudar_permissao" returnType="void" visibility="public">
+          <Argument type="String" name="dono"/>
+          <Argument type="String" name="outros"/>
+        </Method>
+        <Method name="mudar_permissao" returnType="void" visibility="public">
+          <Argument type="Permissao" name="dono"/>
+        </Method>
+        <Method name="mudar_permissao" returnType="void" visibility="public">
+          <Argument type="Permissao" name="dono"/>
+          <Argument type="Permissao" name="outros"/>
+        </Method>
+        <Method name="copiar_arquivo" returnType="File" visibility="public">
+          <Argument type="File" name="copia"/>
+        </Method>
+        <Method name="copiar_arquivo" returnType="File" visibility="public">
+          <Argument type="String" name="diretorio"/>
+        </Method>
+        <Method name="copiar_arquivo" returnType="File" visibility="public"/>
+        <Method name="apagar_conteudo" returnType="void" visibility="public"/>
+        <Method name="excluir" returnType="void" visibility="public"/>
+        <Method name="diretorio" returnType="String" visibility="public"/>
+        <Method name="ocultar_arquivo" returnType="void" visibility="public"/>
+        <Method name="desocultar_arquivo" returnType="void" visibility="public"/>
+        <Method name="alterar_arquivo" returnType="void" visibility="public">
+          <Argument type="String" name="arquivo"/>
+        </Method>
+        <Method name="alterar_arquivo" returnType="void" visibility="public">
+          <Argument type="File" name="arquivo"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="BCodificador" package="iftorrent.arquivos" visibility="public" xPosition="3817.0" yPosition="2516.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="codifica" returnType="byte[]" visibility="public">
+          <Argument type="Map" name="mapa"/>
+        </Method>
+        <Method name="codifica" returnType="void" visibility="public">
+          <Argument type="ByteArrayOutputStream" name="dados"/>
+          <Argument type="Object" name="objeto"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ConstantesLogger" package="iftorrent.arquivos" visibility="public" xPosition="2747.0" yPosition="2150.0">
+      <Fields>
+        <Field name="EXECUCAO" type="int" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="INICIALIZACAO" type="int" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="FINALIZACAO" type="int" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="ERRO" type="int" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="PERSONALIZADO" type="int" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="diretorio" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="nome_pasta" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="extencao" type="String" visibility="public" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="BarraInferiorControlador" package="iftorrent.gui.barraInferior" visibility="public" xPosition="1877.0" yPosition="1761.0">
+      <Fields>
+        <Field name="painel" type="BorderPane" visibility="private"/>
+        <Field name="barra_inferior" type="Label" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="initialize" returnType="void" visibility="public">
+          <Argument type="URL" name="url"/>
+          <Argument type="ResourceBundle" name="rb"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="BarraInferiorConstantes" package="iftorrent.gui.barraInferior" visibility="public" xPosition="1953.0" yPosition="3994.0">
+      <Fields>
+        <Field name="LABEL_ALTURA1" type="float" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="LABEL_TEXTO1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="URL_CSS1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="TuplaXY" package="iftorrent.gui" visibility="public" xPosition="2443.0" yPosition="2435.0">
+      <Fields>
+        <Field name="X" type="double" visibility="public"/>
+        <Field name="Y" type="double" visibility="public"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="double" name="x"/>
+          <Argument type="double" name="y"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="MenuPrincipalControlador" package="iftorrent.gui.menuPrincipal" visibility="public" xPosition="142.0" yPosition="1636.0">
+      <Fields>
+        <Field name="tabela" type="TableView" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="initialize" returnType="void" visibility="public">
+          <Argument type="URL" name="url"/>
+          <Argument type="ResourceBundle" name="rb"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="TuplaAcaoAtalho" package="iftorrent.gui.configuracoesTeclasDeAtalho" visibility="public" xPosition="20.0" yPosition="2420.0">
+      <Fields>
+        <Field name="acao" type="String" visibility="private"/>
+        <Field name="atalho" type="Atalho" visibility="private"/>
+        <Field name="entrada_de_texto" type="Button" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="acao"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="carregar" returnType="void" visibility="public" isFinal="true"/>
+        <Method name="getAcao" returnType="String" visibility="public"/>
+        <Method name="setAcao" returnType="void" visibility="public">
+          <Argument type="String" name="acao"/>
+        </Method>
+        <Method name="getAtalho" returnType="Atalho" visibility="public"/>
+        <Method name="setAtalho" returnType="void" visibility="public">
+          <Argument type="Atalho" name="atalho"/>
+        </Method>
+        <Method name="getEntrada_de_texto" returnType="Node" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Atalho" package="iftorrent.gui.configuracoesTeclasDeAtalho" visibility="public" xPosition="320.0" yPosition="2420.0">
+      <Fields>
+        <Field name="shift_ativado" type="boolean" visibility="private"/>
+        <Field name="ctrl_ativado" type="boolean" visibility="private"/>
+        <Field name="alt_ativado" type="boolean" visibility="private"/>
+        <Field name="tecla" type="KeyCode" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="KeyCode" name="tecla"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="KeyEvent" name="evento"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="KeyCode" name="tecla"/>
+          <Argument type="boolean" name="shift"/>
+          <Argument type="boolean" name="ctrl"/>
+          <Argument type="boolean" name="alt"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="isShift_ativado" returnType="boolean" visibility="public"/>
+        <Method name="setShift_ativado" returnType="void" visibility="public">
+          <Argument type="boolean" name="shift_ativado"/>
+        </Method>
+        <Method name="isCtrl_ativado" returnType="boolean" visibility="public"/>
+        <Method name="setCtrl_ativado" returnType="void" visibility="public">
+          <Argument type="boolean" name="ctrl_ativado"/>
+        </Method>
+        <Method name="isAlt_ativado" returnType="boolean" visibility="public"/>
+        <Method name="setAlt_ativado" returnType="void" visibility="public">
+          <Argument type="boolean" name="alt_ativado"/>
+        </Method>
+        <Method name="getTecla" returnType="KeyCode" visibility="public"/>
+        <Method name="setTecla" returnType="void" visibility="public">
+          <Argument type="KeyCode" name="tecla"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="adicionar" returnType="String" visibility="private">
+          <Argument type="String" name="frase"/>
+          <Argument type="String" name="parte"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ConfiguracoesTeclasDeAtalhoConstantes" package="iftorrent.gui.configuracoesTeclasDeAtalho" visibility="public" xPosition="2246.0" yPosition="1636.0">
+      <Fields>
+        <Field name="ENTRADA_DE_TEXTO_TAMANHO1" type="TuplaXY" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="BOTAO_TAMANHO1" type="TuplaXY" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="BOTAO_TAMANHO2" type="TuplaXY" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="COLUNA1_LARGURA1" type="double" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="COLUNA2_LARGURA1" type="double" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="BARRA_INFERIOR_ALTURA1" type="double" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="BARRA_INFERIOR_ESPACAMENTO" type="double" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="COLUNA1_TITULO1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="COLUNA2_TITULO1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="BOTAO1_TEXTO1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="BOTAO2_TEXTO1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="URL_CSS1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="ConfiguracoesTeclasDeAtalhoControlador" package="iftorrent.gui.configuracoesTeclasDeAtalho" visibility="public" xPosition="47.0" yPosition="1996.0">
+      <Fields>
+        <Field name="tabela" type="TableView&lt;TuplaAcaoAtalho&gt;" visibility="private"/>
+        <Field name="opcoes" type="TableColumn" visibility="private"/>
+        <Field name="painel" type="VBox" visibility="private"/>
+        <Field name="barra_inferior" type="HBox" visibility="private"/>
+        <Field name="salvar" type="Button" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="initialize" returnType="void" visibility="public">
+          <Argument type="URL" name="url"/>
+          <Argument type="ResourceBundle" name="rb"/>
+        </Method>
+        <Method name="delegar_foco" returnType="void" visibility="public">
+          <Argument type="TuplaAcaoAtalho" name="ultimo_selecionado"/>
+        </Method>
+        <Method name="adicionar_foco" returnType="void" visibility="public">
+          <Argument type="TuplaAcaoAtalho" name="caixa_selecionada"/>
+        </Method>
+        <Method name="getTuplas_acao_atalho" returnType="ObservableList" visibility="public"/>
+        <Method name="adicionar_linha" returnType="void" visibility="public">
+          <Argument type="String" name="acao"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="JanelaPrincipalMain" package="iftorrent.gui.janelaPrincipal" visibility="public" xPosition="213.0" yPosition="1808.0">
+      <Fields>
+        <Field name="a" type="Stage" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="start" returnType="void" visibility="public">
+          <Argument type="Stage" name="stage"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="JanelaPrincipalConstantes" package="iftorrent.gui.janelaPrincipal" visibility="public" xPosition="1877.0" yPosition="2108.0">
+      <Fields>
+        <Field name="JANELA_TAMANHO1" type="TuplaXY" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="URL_ICONE1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="JANELA_TITULO1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="JanelaPrincipalControlador" package="iftorrent.gui.janelaPrincipal" visibility="public" xPosition="1733.0" yPosition="2295.0">
+      <Fields>
+        <Field name="menu_principal" type="HBox" visibility="private"/>
+        <Field name="painel1" type="VBox" visibility="private"/>
+        <Field name="painel2" type="HBox" visibility="private"/>
+        <Field name="painel3" type="VBox" visibility="private"/>
+        <Field name="painel4" type="VBox" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="initialize" returnType="void" visibility="public">
+          <Argument type="URL" name="url"/>
+          <Argument type="ResourceBundle" name="rb"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Alertas" package="iftorrent.gui" visibility="public" xPosition="1676.0" yPosition="3994.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="getImagem_erro" returnType="Alert" visibility="public" isStatic="true"/>
+      </Methods>
+    </Class>
+    <Class name="BarraMenuConstantes" package="iftorrent.gui.barraMenu" visibility="public" xPosition="1448.0" yPosition="2907.0">
+      <Fields>
+        <Field name="JANELA_TECLAS_DE_ATALHO_TAMANHO1" type="TuplaXY" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="URL_ICONE1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="MENU1_TEXTO1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="MENU1_ITEM1_TEXTO1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="MENU1_ITEM2_TEXTO1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="MENU1_ITEM3_TEXTO1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="MENU1_ITEM4_TEXTO1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="MENU2_TEXTO1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="MENU2_ITEM1_TEXTO1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="MENU2_ITEM2_TEXTO1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="MENU2_ITEM3_TEXTO1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="MENU3_TEXTO1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="MENU3_ITEM1_TEXTO1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="MENU3_ITEM2_TEXTO1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="MENU3_ITEM3_TEXTO1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="MENU3_ITEM4_TEXTO1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="MENU3_ITEM5_TEXTO1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="MENU4_TEXTO1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="MENU4_ITEM1_TEXTO1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="MENU4_ITEM2_TEXTO1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="MENU4_ITEM3_TEXTO1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="MENU4_ITEM4_TEXTO1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="MENU5_TEXTO1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="JANELA_TECLAS_DE_ATALHO_TITULO1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="URL_FXML_TECLAS_DE_ATALHO" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="URL_SITE1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="URL_SITE2" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="URL_CSS1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="BarraMenuControlador" package="iftorrent.gui.barraMenu" visibility="public" xPosition="834.0" yPosition="2446.0">
+      <Fields>
+        <Field name="painel" type="HBox" visibility="private"/>
+        <Field name="menu" type="MenuBar" visibility="private"/>
+        <Field name="arquivo" type="Menu" visibility="private"/>
+        <Field name="item_arquivo1" type="MenuItem" visibility="private"/>
+        <Field name="visualizar" type="Menu" visibility="private"/>
+        <Field name="item_visualizar1" type="MenuItem" visibility="private"/>
+        <Field name="configuracoes" type="Menu" visibility="private"/>
+        <Field name="item_configuracoes1" type="MenuItem" visibility="private"/>
+        <Field name="ajuda" type="Menu" visibility="private"/>
+        <Field name="item_ajuda1" type="MenuItem" visibility="private"/>
+        <Field name="site" type="Menu" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="initialize" returnType="void" visibility="public">
+          <Argument type="URL" name="url"/>
+          <Argument type="ResourceBundle" name="rb"/>
+        </Method>
+        <Method name="abrir_janela_atalhos" returnType="void" visibility="public"/>
+        <Method name="ir_para_site_de_ajuda" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="BarraLogoffConstantes" package="iftorrent.gui.barraLogoff" visibility="public" xPosition="620.0" yPosition="2820.0">
+      <Fields>
+        <Field name="BARRA_LOGOFF_ALTURA1" type="double" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="BOTAO_LARGURA1" type="double" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="BOTAO_LARGURA2" type="double" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="IMAGEM_TAMANHO1" type="TuplaXY" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="URL_ENCERRAR" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="URL_FECHAR" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="URL_BLOQUEAR" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="URL_CSS1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="BarraLogoffControlador" package="iftorrent.gui.barraLogoff" visibility="public" xPosition="920.0" yPosition="2834.0">
+      <Fields>
+        <Field name="menu" type="HBox" visibility="private"/>
+        <Field name="botao_expandir" type="Button" visibility="private"/>
+        <Field name="painel" type="HBox" visibility="private" isFinal="true"/>
+        <Field name="encerrar" type="Button" visibility="private" isFinal="true"/>
+        <Field name="fechar" type="Button" visibility="private" isFinal="true"/>
+        <Field name="bloquear" type="Button" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="initialize" returnType="void" visibility="public">
+          <Argument type="URL" name="url"/>
+          <Argument type="ResourceBundle" name="rb"/>
+        </Method>
+        <Method name="criar_imagem" returnType="ImageView" visibility="private">
+          <Argument type="String" name="url"/>
+          <Argument type="TuplaXY" name="tamanho"/>
+        </Method>
+        <Method name="mostrar_ou_ocultar" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="BarraLateralControlador" package="iftorrent.gui.barraLateral" visibility="public" xPosition="1441.0" yPosition="2539.0">
+      <Fields>
+        <Field name="arvore" type="TreeView&lt;String&gt;" visibility="private"/>
+        <Field name="painel" type="VBox" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="initialize" returnType="void" visibility="public">
+          <Argument type="URL" name="url"/>
+          <Argument type="ResourceBundle" name="rb"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="BarraLateralConstantes" package="iftorrent.gui.barraLateral" visibility="public" xPosition="1021.0" yPosition="4603.0">
+      <Fields>
+        <Field name="TAMANHO_MINIMO_VBOX" type="int" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="TREEITEM_TEXTO1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="TREEITEM_TEXTO2" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="TREEITEM_TEXTO3" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="TREEITEM_TEXTO4" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="TREEITEM_TEXTO5" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="TREEITEM_TEXTO6" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="TREEITEM_TEXTO7" type="String" visibility="public" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="BarraDeFerramentasControlador" package="iftorrent.gui.barraDeFerramentas" visibility="public" xPosition="915.0" yPosition="3929.0">
+      <Fields>
+        <Field name="painel" type="BorderPane" visibility="private"/>
+        <Field name="campo_de_texto" type="TextField" visibility="private"/>
+        <Field name="botao_iniciar" type="Button" visibility="private"/>
+        <Field name="botao_pausar" type="Button" visibility="private"/>
+        <Field name="botao_parar" type="Button" visibility="private"/>
+        <Field name="botao_subir_fila" type="Button" visibility="private"/>
+        <Field name="botao_descer_fila" type="Button" visibility="private"/>
+        <Field name="botao_remover" type="Button" visibility="private"/>
+        <Field name="botao_adicionar_arquivo" type="Button" visibility="private"/>
+        <Field name="botao_link_magnetico" type="Button" visibility="private"/>
+        <Field name="botao_gerar_torrent" type="Button" visibility="private"/>
+        <Field name="icone_barra_de_pesquisa" type="MenuButton" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="acao_iniciar" returnType="void" visibility="private"/>
+        <Method name="acao_pausar" returnType="void" visibility="public"/>
+        <Method name="acao_parar" returnType="void" visibility="public"/>
+        <Method name="acao_subir_fila" returnType="void" visibility="public"/>
+        <Method name="acao_descer_fila" returnType="void" visibility="public"/>
+        <Method name="acao_remover" returnType="void" visibility="public"/>
+        <Method name="acao_adicionar_arquivo" returnType="void" visibility="public"/>
+        <Method name="acao_link_magnetico" returnType="void" visibility="public"/>
+        <Method name="acao_gerar_torrent" returnType="void" visibility="public"/>
+        <Method name="acao_pesquisar" returnType="void" visibility="public"/>
+        <Method name="initialize" returnType="void" visibility="public">
+          <Argument type="URL" name="url"/>
+          <Argument type="ResourceBundle" name="rb"/>
+        </Method>
+        <Method name="criar_imagem" returnType="ImageView" visibility="private">
+          <Argument type="String" name="url"/>
+          <Argument type="TuplaXY" name="tamanho"/>
+        </Method>
+        <Method name="formatar" returnType="void" visibility="private">
+          <Argument type="Button" name="botao"/>
+        </Method>
+        <Method name="formatar" returnType="void" visibility="private">
+          <Argument type="TextField" name="campo_de_texto"/>
+        </Method>
+        <Method name="changed" returnType="void" visibility="public">
+          <Argument type="ObservableValue" name="valor_observavel"/>
+          <Argument type="Boolean" name="valor_antigo"/>
+          <Argument type="Boolean" name="valor_novo"/>
+        </Method>
+        <Method name="formatar_campo_de_pesquisa" returnType="void" visibility="public">
+          <Argument type="String" name="conteudo"/>
+          <Argument type="String" name="cor_do_texto"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="BarraDeFerramentasConstantes" package="iftorrent.gui.barraDeFerramentas" visibility="public" xPosition="2792.0" yPosition="3010.0">
+      <Fields>
+        <Field name="TAXA_DE_REDUCAO1" type="int" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="IMAGEM_TAMANHO1" type="TuplaXY" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="IMAGEM_TAMANHO2" type="TuplaXY" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="BOTAO_TAMANHO1" type="TuplaXY" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="CAMPO_DE_TEXTO_TAMANHO1" type="TuplaXY" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="CAMPO_DE_TEXTO_CONTEUDO1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="CAMPO_DE_TEXTO_CONTEUDO2" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="TEXTO_COR1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="TEXTO_COR2" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="URL_INICIAR" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="URL_PAUSAR" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="URL_PARAR" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="URL_SUBIR_FILA" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="URL_DESCER_FILA" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="URL_REMOVER" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="URL_ADICIONAR_ARQUIVO" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="URL_LINK_MAGNETICO" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="URL_GERAR_TORRENT" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="URL_PESQUISAR" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="URL_CSS1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="PropriedadesRastreadores" package="iftorrent.gui.abasPropriedades" visibility="public" xPosition="70.0" yPosition="4484.0">
+      <Fields>
+        <Field name="ip" type="String" visibility="private"/>
+        <Field name="estado" type="String" visibility="private"/>
+        <Field name="sementes" type="int" visibility="private"/>
+        <Field name="pares" type="int" visibility="private"/>
+        <Field name="arquivos_baixados" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="ip"/>
+          <Argument type="String" name="estado"/>
+          <Argument type="int" name="sementes"/>
+          <Argument type="int" name="pares"/>
+          <Argument type="int" name="arquivos_baixados"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getIp" returnType="String" visibility="public"/>
+        <Method name="setIp" returnType="void" visibility="public">
+          <Argument type="String" name="ip"/>
+        </Method>
+        <Method name="getEstado" returnType="String" visibility="public"/>
+        <Method name="setEstado" returnType="void" visibility="public">
+          <Argument type="String" name="estado"/>
+        </Method>
+        <Method name="getSementes" returnType="int" visibility="public"/>
+        <Method name="setSementes" returnType="void" visibility="public">
+          <Argument type="int" name="sementes"/>
+        </Method>
+        <Method name="getPares" returnType="int" visibility="public"/>
+        <Method name="setPares" returnType="void" visibility="public">
+          <Argument type="int" name="pares"/>
+        </Method>
+        <Method name="getArquivos_baixados" returnType="int" visibility="public"/>
+        <Method name="setArquivos_baixados" returnType="void" visibility="public">
+          <Argument type="int" name="arquivos_baixados"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="AbasPropriedadesControlador" package="iftorrent.gui.abasPropriedades" visibility="public" xPosition="88.0" yPosition="3123.0">
+      <Fields>
+        <Field name="painel_abas" type="TabPane" visibility="private"/>
+        <Field name="tabela1" type="TableView" visibility="private"/>
+        <Field name="coluna_nome" type="TableColumn" visibility="private"/>
+        <Field name="tabela2" type="TableView" visibility="private"/>
+        <Field name="coluna_ip" type="TableColumn" visibility="private"/>
+        <Field name="painel3" type="HBox" visibility="private"/>
+        <Field name="tab_arquivos" type="Tab" visibility="private"/>
+        <Field name="tab_informacoes" type="Tab" visibility="private"/>
+        <Field name="tab_rastreadores" type="Tab" visibility="private"/>
+        <Field name="tab_velocidade" type="Tab" visibility="private"/>
+        <Field name="painel12" type="HBox" visibility="private"/>
+        <Field name="painel21" type="VBox" visibility="private"/>
+        <Field name="painel22" type="VBox" visibility="private"/>
+        <Field name="painel23" type="VBox" visibility="private"/>
+        <Field name="painel24" type="VBox" visibility="private"/>
+        <Field name="label1" type="Label" visibility="private"/>
+        <Field name="lista_de_arquivos" type="HashMap&lt;String, List&lt;PropriedadesArquivos&gt;&gt;" visibility="private" isFinal="true"/>
+        <Field name="numero_de_listas_de_arquivos" type="int" visibility="private"/>
+        <Field name="linhas" type="HashMap&lt;String, XYChart.Series&gt;" visibility="private" isFinal="true"/>
+        <Field name="numero_de_linhas_grafico" type="int" visibility="private"/>
+        <Field name="lista_de_rastreadores" type="HashMap&lt;String, List&lt;PropriedadesRastreadores&gt;&gt;" visibility="private" isFinal="true"/>
+        <Field name="numero_de_listas_de_rastreadores" type="int" visibility="private"/>
+        <Field name="grafico" type="LineChart" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="initialize" returnType="void" visibility="public">
+          <Argument type="URL" name="url"/>
+          <Argument type="ResourceBundle" name="rb"/>
+        </Method>
+        <Method name="setar_numero_pares_arquivo" returnType="void" visibility="public">
+          <Argument type="int" name="pares"/>
+        </Method>
+        <Method name="setar_quantidade_baixada_arquivo" returnType="void" visibility="public">
+          <Argument type="float" name="quantidade"/>
+        </Method>
+        <Method name="setar_quantidade_baixada_arquivo" returnType="void" visibility="public">
+          <Argument type="int" name="quantidade"/>
+        </Method>
+        <Method name="setar_tempo_restante_arquivo" returnType="void" visibility="public">
+          <Argument type="int" name="tempo"/>
+        </Method>
+        <Method name="setar_tempo_restante_arquivo" returnType="void" visibility="public">
+          <Argument type="float" name="tempo"/>
+        </Method>
+        <Method name="setar_numero_sementes_arquivo" returnType="void" visibility="public">
+          <Argument type="int" name="sementes"/>
+        </Method>
+        <Method name="setar_quantidade_enviada_arquivo" returnType="void" visibility="public">
+          <Argument type="float" name="quantidade"/>
+        </Method>
+        <Method name="setar_quantidade_enviada_arquivo" returnType="void" visibility="public">
+          <Argument type="int" name="quantidade"/>
+        </Method>
+        <Method name="setar_tempo_gasto_arquivo" returnType="void" visibility="public">
+          <Argument type="int" name="tempo"/>
+        </Method>
+        <Method name="setar_tempo_gasto_arquivo" returnType="void" visibility="public">
+          <Argument type="float" name="tempo"/>
+        </Method>
+        <Method name="adicionar_lista_de_arquivos" returnType="void" visibility="public">
+          <Argument type="List&lt;PropriedadesArquivos&gt;" name="arquivo"/>
+        </Method>
+        <Method name="adicionar_lista_de_arquivos" returnType="void" visibility="public">
+          <Argument type="String" name="chave"/>
+          <Argument type="List&lt;PropriedadesArquivos&gt;" name="arquivo"/>
+        </Method>
+        <Method name="remover_lista_de_arquivos" returnType="void" visibility="public">
+          <Argument type="String" name="chave"/>
+        </Method>
+        <Method name="mostrar_lista_de_arquivos" returnType="void" visibility="public">
+          <Argument type="String" name="chave"/>
+        </Method>
+        <Method name="adicionar_lista_de_rastreadores" returnType="void" visibility="public">
+          <Argument type="List&lt;PropriedadesRastreadores&gt;" name="arquivo"/>
+        </Method>
+        <Method name="adicionar_lista_de_rastreadores" returnType="void" visibility="public">
+          <Argument type="String" name="chave"/>
+          <Argument type="List&lt;PropriedadesRastreadores&gt;" name="arquivo"/>
+        </Method>
+        <Method name="remover_lista_de_rastreadores" returnType="void" visibility="public">
+          <Argument type="String" name="chave"/>
+        </Method>
+        <Method name="mostrar_lista_de_rastreadores" returnType="void" visibility="public">
+          <Argument type="String" name="chave"/>
+        </Method>
+        <Method name="inserir_linha" returnType="XYChart.Series" visibility="public">
+          <Argument type="XYChart.Series" name="linha"/>
+        </Method>
+        <Method name="inserir_linha" returnType="XYChart.Series" visibility="public">
+          <Argument type="String" name="chave"/>
+          <Argument type="XYChart.Series" name="linha"/>
+        </Method>
+        <Method name="remover_linha" returnType="XYChart.Series" visibility="public">
+          <Argument type="String" name="chave"/>
+        </Method>
+        <Method name="criar_linha" returnType="XYChart.Series" visibility="public">
+          <Argument type="String" name="chave"/>
+          <Argument type="String" name="nome"/>
+          <Argument type="Object" name="pontos"/>
+        </Method>
+        <Method name="criar_linha" returnType="XYChart.Series" visibility="public">
+          <Argument type="String" name="chave"/>
+          <Argument type="String" name="nome"/>
+        </Method>
+        <Method name="criar_linha" returnType="XYChart.Series" visibility="public">
+          <Argument type="String" name="chave"/>
+          <Argument type="Object" name="pontos"/>
+        </Method>
+        <Method name="criar_linha" returnType="XYChart.Series" visibility="public">
+          <Argument type="String" name="chave"/>
+        </Method>
+        <Method name="inserir_ponto" returnType="XYChart.Data" visibility="public">
+          <Argument type="String" name="chave"/>
+          <Argument type="XYChart.Data" name="ponto"/>
+        </Method>
+        <Method name="remover_primeiro_ponto" returnType="XYChart.Data" visibility="public">
+          <Argument type="String" name="chave"/>
+        </Method>
+        <Method name="remover_ultimo_ponto" returnType="XYChart.Data" visibility="public">
+          <Argument type="String" name="chave"/>
+        </Method>
+        <Method name="remover_ponto" returnType="XYChart.Data" visibility="public">
+          <Argument type="String" name="chave"/>
+          <Argument type="XYChart.Data" name="ponto"/>
+        </Method>
+        <Method name="criar_ponto" returnType="XYChart.Data" visibility="public">
+          <Argument type="String" name="chave"/>
+          <Argument type="String" name="eixo_x"/>
+          <Argument type="int" name="eixo_y"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="AbasPropriedadesConstantes" package="iftorrent.gui.abasPropriedades" visibility="public" xPosition="2413.0" yPosition="3429.0">
+      <Fields>
+        <Field name="PAINEL_TAMANHO1" type="TuplaXY" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="BARRA_DE_PROGRESSO_TAMANHO1" type="TuplaXY" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="TABELA1_COLUNA1_TAMANHO1" type="double" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="TABELA1_COLUNA2_TAMANHO1" type="double" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="TABELA1_COLUNA3_TAMANHO1" type="double" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="TABELA2_COLUNA1_TAMANHO1" type="double" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="TABELA2_COLUNA2_TAMANHO1" type="double" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="TABELA2_COLUNA3_TAMANHO1" type="double" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="TABELA2_COLUNA4_TAMANHO1" type="double" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="TABELA2_COLUNA5_TAMANHO1" type="double" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="TAB_ARQUIVOS_NOME1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="TAB_INFORMACOES_NOME1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="TAB_RASTREADORES_NOME1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="TAB_VELOCIDADE_NOME1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="TABELA1_COLUNA1_NOME1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="TABELA1_COLUNA2_NOME1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="TABELA1_COLUNA3_NOME1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="TABELA2_COLUNA1_NOME1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="TABELA2_COLUNA2_NOME1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="TABELA2_COLUNA3_NOME1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="TABELA2_COLUNA4_NOME1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="TABELA2_COLUNA5_NOME1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="UNIDADE_DE_INFORMACAO_PADRAO1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="UNIDADE_DE_TEMPO_PADRAO1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="UNIDADE_DE_TEMPO_PADRAO2" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="UNIDADE_DE_VELOCIDADE_PADRAO1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="LABEL1_TEXTO1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="LABEL2_TEXTO1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="LABEL3_TEXTO1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="LABEL4_TEXTO1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="LABEL5_TEXTO1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="LABEL6_TEXTO1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="LABEL7_TEXTO1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="EIXO_X1_TEXTO1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="EIXO_Y1_TEXTO1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="URL_CSS1" type="String" visibility="public" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="PropriedadesArquivos" package="iftorrent.gui.abasPropriedades" visibility="public" xPosition="1894.0" yPosition="3362.0">
+      <Fields>
+        <Field name="nome" type="String" visibility="private"/>
+        <Field name="tamanho" type="float" visibility="private"/>
+        <Field name="barra" type="ProgressBar" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nome"/>
+          <Argument type="float" name="tamanho"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getNome" returnType="String" visibility="public"/>
+        <Method name="setNome" returnType="void" visibility="public">
+          <Argument type="String" name="nome"/>
+        </Method>
+        <Method name="getTamanho" returnType="float" visibility="public"/>
+        <Method name="setTamanho" returnType="void" visibility="public">
+          <Argument type="float" name="tamanho"/>
+        </Method>
+        <Method name="getTamanho_MB" returnType="String" visibility="public"/>
+        <Method name="getProgresso" returnType="float" visibility="public"/>
+        <Method name="setProgresso" returnType="void" visibility="public">
+          <Argument type="float" name="progresso"/>
+        </Method>
+        <Method name="setTamanho_barra_progresso" returnType="void" visibility="public">
+          <Argument type="TuplaXY" name="tamanho_barra_progresso"/>
+        </Method>
+        <Method name="getBarra_progresso" returnType="ProgressBar" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="ManipuladorImagem" package="iftorrent.gui" visibility="public" xPosition="1657.0" yPosition="3780.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="redimensionar_imagem" returnType="BufferedImage" visibility="public" isStatic="true">
+          <Argument type="BufferedImage" name="imagem"/>
+          <Argument type="int" name="largura_final"/>
+          <Argument type="int" name="altura_final"/>
+        </Method>
+        <Method name="converter_para_WritableImage" returnType="WritableImage" visibility="public" isStatic="true">
+          <Argument type="BufferedImage" name="imagem"/>
+        </Method>
+        <Method name="redimencionar_imagem" returnType="BufferedImage" visibility="public" isStatic="true">
+          <Argument type="BufferedImage" name="imagem"/>
+          <Argument type="TuplaXY" name="tamanho"/>
+          <Argument type="int" name="taxa_de_reducao"/>
+        </Method>
+        <Method name="converter_para_ImageView" returnType="ImageView" visibility="public" isStatic="true">
+          <Argument type="BufferedImage" name="imagem"/>
+        </Method>
+        <Method name="criar_imagem" returnType="ImageView" visibility="public" isStatic="true">
+          <Argument type="String" name="url"/>
+          <Argument type="TuplaXY" name="tamanho"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="AlertasConstantes" package="iftorrent.gui" visibility="public" xPosition="1321.0" yPosition="4525.0">
+      <Fields>
+        <Field name="URL_ICONE1" type="String" visibility="public" isStatic="true"/>
+        <Field name="IMAGEM_ERRO_TITULO1" type="String" visibility="public" isStatic="true"/>
+        <Field name="IMAGEM_ERRO_CABECALHO1" type="String" visibility="public" isStatic="true"/>
+        <Field name="IMAGEM_ERRO_CONTEUDO1" type="String" visibility="public" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Comunicador" package="iftorrent.gui" visibility="public" xPosition="899.0" yPosition="1636.0">
+      <Fields>
+        <Field name="abas_propriedades" type="AbasPropriedadesControlador" visibility="private" isStatic="true"/>
+        <Field name="barra_de_ferramentas" type="BarraDeFerramentasControlador" visibility="private" isStatic="true"/>
+        <Field name="barra_inferior" type="BarraInferiorControlador" visibility="private" isStatic="true"/>
+        <Field name="barra_lateral" type="BarraLateralControlador" visibility="private" isStatic="true"/>
+        <Field name="barra_logoff" type="BarraLogoffControlador" visibility="private" isStatic="true"/>
+        <Field name="barra_menu" type="BarraMenuControlador" visibility="private" isStatic="true"/>
+        <Field name="configuracoes_teclas_de_atalho" type="ConfiguracoesTeclasDeAtalhoControlador" visibility="private" isStatic="true"/>
+        <Field name="janela_principal" type="JanelaPrincipalControlador" visibility="private" isStatic="true"/>
+        <Field name="menu_principal" type="MenuPrincipalControlador" visibility="private" isStatic="true"/>
+        <Field name="main" type="JanelaPrincipalMain" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getAbas_propriedades" returnType="AbasPropriedadesControlador" visibility="public" isStatic="true"/>
+        <Method name="setAbas_propriedades" returnType="void" visibility="public" isStatic="true">
+          <Argument type="AbasPropriedadesControlador" name="abas_propriedades"/>
+        </Method>
+        <Method name="getBarra_de_ferramentas" returnType="BarraDeFerramentasControlador" visibility="public" isStatic="true"/>
+        <Method name="setBarra_de_ferramentas" returnType="void" visibility="public" isStatic="true">
+          <Argument type="BarraDeFerramentasControlador" name="barra_de_ferramentas"/>
+        </Method>
+        <Method name="getBarra_inferior" returnType="BarraInferiorControlador" visibility="public" isStatic="true"/>
+        <Method name="setBarra_inferior" returnType="void" visibility="public" isStatic="true">
+          <Argument type="BarraInferiorControlador" name="barra_inferior"/>
+        </Method>
+        <Method name="getBarra_lateral" returnType="BarraLateralControlador" visibility="public" isStatic="true"/>
+        <Method name="setBarra_lateral" returnType="void" visibility="public" isStatic="true">
+          <Argument type="BarraLateralControlador" name="barra_lateral"/>
+        </Method>
+        <Method name="getBarra_logoff" returnType="BarraLogoffControlador" visibility="public" isStatic="true"/>
+        <Method name="setBarra_logoff" returnType="void" visibility="public" isStatic="true">
+          <Argument type="BarraLogoffControlador" name="barra_logoff"/>
+        </Method>
+        <Method name="getBarra_menu" returnType="BarraMenuControlador" visibility="public" isStatic="true"/>
+        <Method name="setBarra_menu" returnType="void" visibility="public" isStatic="true">
+          <Argument type="BarraMenuControlador" name="barra_menu"/>
+        </Method>
+        <Method name="getConfiguracoes_teclas_de_atalho" returnType="ConfiguracoesTeclasDeAtalhoControlador" visibility="public" isStatic="true"/>
+        <Method name="setConfiguracoes_teclas_de_atalho" returnType="void" visibility="public" isStatic="true">
+          <Argument type="ConfiguracoesTeclasDeAtalhoControlador" name="configuracoes_teclas_de_atalho"/>
+        </Method>
+        <Method name="getJanela_principal" returnType="JanelaPrincipalControlador" visibility="public" isStatic="true"/>
+        <Method name="setJanela_principal" returnType="void" visibility="public" isStatic="true">
+          <Argument type="JanelaPrincipalControlador" name="janela_principal"/>
+        </Method>
+        <Method name="getMenu_principal" returnType="MenuPrincipalControlador" visibility="public" isStatic="true"/>
+        <Method name="setMenu_principal" returnType="void" visibility="public" isStatic="true">
+          <Argument type="MenuPrincipalControlador" name="menu_principal"/>
+        </Method>
+        <Method name="getMain" returnType="JanelaPrincipalMain" visibility="public" isStatic="true"/>
+        <Method name="setMain" returnType="void" visibility="public" isStatic="true">
+          <Argument type="JanelaPrincipalMain" name="main"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="NodoMapa" package="iftorrent.colecoes" visibility="public" xPosition="2394.0" yPosition="4392.0">
+      <Fields>
+        <Field name="chave" type="K" visibility="private"/>
+        <Field name="valor" type="V" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="package">
+          <Argument type="K" name="chave"/>
+          <Argument type="V" name="valor"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="obter_chave" returnType="K" visibility="public"/>
+        <Method name="obter_valor" returnType="V" visibility="public"/>
+        <Method name="para_texto" returnType="String" visibility="public"/>
+        <Method name="alterar_valor" returnType="boolean" visibility="public">
+          <Argument type="V" name="novo_valor"/>
+        </Method>
+        <Method name="equals" returnType="boolean" visibility="public">
+          <Argument type="Object" name="objeto"/>
+        </Method>
+        <Method name="igual" returnType="boolean" visibility="public">
+          <Argument type="Object" name="objeto"/>
+        </Method>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="ListaEncadeada" package="iftorrent.colecoes" visibility="public" xPosition="1561.0" yPosition="5257.0">
+      <Fields>
+        <Field name="primeiro" type="NodoLista&lt;tipo_objeto&gt;" visibility="private"/>
+        <Field name="ultimo" type="NodoLista&lt;tipo_objeto&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="tipo_objeto" name="objeto"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="adicionar" returnType="boolean" visibility="public">
+          <Argument type="tipo_objeto" name="objeto"/>
+        </Method>
+        <Method name="adicionar_no_inicio" returnType="boolean" visibility="public">
+          <Argument type="tipo_objeto" name="objeto"/>
+        </Method>
+        <Method name="adicionar_apos" returnType="boolean" visibility="public">
+          <Argument type="tipo_objeto" name="objeto_procurado"/>
+          <Argument type="tipo_objeto" name="objeto"/>
+        </Method>
+        <Method name="remover_inicio" returnType="boolean" visibility="public"/>
+        <Method name="remover_ultimo" returnType="boolean" visibility="public"/>
+        <Method name="remover" returnType="boolean" visibility="public">
+          <Argument type="tipo_objeto" name="valor"/>
+        </Method>
+        <Method name="remover" returnType="boolean" visibility="public">
+          <Argument type="int" name="index"/>
+        </Method>
+        <Method name="eh_vazio" returnType="boolean" visibility="public"/>
+        <Method name="tamanho" returnType="int" visibility="public"/>
+        <Method name="mostrar_dados" returnType="void" visibility="public"/>
+        <Method name="obter_na_posicao" returnType="NodoLista" visibility="public">
+          <Argument type="int" name="index"/>
+        </Method>
+        <Method name="para_vetor" returnType="tipo_objeto[]" visibility="public"/>
+        <Method name="contem" returnType="boolean" visibility="public">
+          <Argument type="tipo_objeto" name="objeto"/>
+        </Method>
+        <Method name="obter_indice" returnType="int" visibility="public">
+          <Argument type="tipo_objeto" name="objeto"/>
+        </Method>
+        <Method name="para_texto" returnType="String" visibility="public"/>
+        <Method name="modificar_objeto" returnType="boolean" visibility="public">
+          <Argument type="tipo_objeto" name="procurado"/>
+          <Argument type="tipo_objeto" name="objeto"/>
+        </Method>
+        <Method name="iterator" returnType="Iterator&lt;tipo_objeto&gt;" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Mapa" package="iftorrent.colecoes" visibility="public" xPosition="1793.0" yPosition="4364.0">
+      <Fields>
+        <Field name="pares" type="Conjunto&lt;NodoMapa&gt;" visibility="private"/>
+        <Field name="chaves" type="Conjunto&lt;K&gt;" visibility="private"/>
+        <Field name="valores" type="ListaEncadeada&lt;V&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Conjunto&lt;NodoMapa&gt;" name="pares2"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="tamanho" returnType="int" visibility="public"/>
+        <Method name="eh_vazio" returnType="boolean" visibility="public"/>
+        <Method name="contem_objeto" returnType="boolean" visibility="public">
+          <Argument type="V" name="valor"/>
+        </Method>
+        <Method name="contem_chave" returnType="boolean" visibility="public">
+          <Argument type="K" name="chave"/>
+        </Method>
+        <Method name="obter_objeto" returnType="V" visibility="public">
+          <Argument type="K" name="chave"/>
+        </Method>
+        <Method name="adicionar" returnType="boolean" visibility="public">
+          <Argument type="K" name="chave"/>
+          <Argument type="V" name="valor"/>
+        </Method>
+        <Method name="remover" returnType="boolean" visibility="public">
+          <Argument type="K" name="chave"/>
+        </Method>
+        <Method name="limpar" returnType="void" visibility="public"/>
+        <Method name="chaves" returnType="Conjunto&lt;K&gt;" visibility="public"/>
+        <Method name="para_texto" returnType="String" visibility="public"/>
+        <Method name="valores" returnType="ListaEncadeada&lt;V&gt;" visibility="public"/>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="boolean" visibility="public">
+          <Argument type="Object" name="obj"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Conjunto" package="iftorrent.colecoes" visibility="public" xPosition="993.0" yPosition="5047.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="tipo" name="objeto"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="adicionar_apos" returnType="boolean" visibility="public">
+          <Argument type="Object" name="objetoProcurado"/>
+          <Argument type="Object" name="objeto"/>
+        </Method>
+        <Method name="adicionar_no_inicio" returnType="boolean" visibility="public">
+          <Argument type="Object" name="objeto"/>
+        </Method>
+        <Method name="adicionar" returnType="boolean" visibility="public">
+          <Argument type="Object" name="objeto"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="NodoLista" package="iftorrent.colecoes" visibility="public" xPosition="2387.0" yPosition="5192.0">
+      <Fields>
+        <Field name="proximo" type="NodoLista" visibility="private"/>
+        <Field name="objeto" type="tipo_objeto" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="tipo_objeto" name="objeto"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="obter_proximo" returnType="NodoLista" visibility="public"/>
+        <Method name="alterar_proximo" returnType="void" visibility="public">
+          <Argument type="NodoLista" name="proximo"/>
+        </Method>
+        <Method name="obter_objeto" returnType="tipo_objeto" visibility="public"/>
+        <Method name="alterar_objeto" returnType="void" visibility="public">
+          <Argument type="tipo_objeto" name="valor"/>
+        </Method>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="boolean" visibility="public">
+          <Argument type="NodoLista" name="objeto"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Lista" package="iftorrent.colecoes" visibility="public" xPosition="2387.0" yPosition="4714.0">
+      <Fields>
+        <Field name="vetor" type="tipo_objeto[]" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="adicionar" returnType="boolean" visibility="public">
+          <Argument type="tipo_objeto" name="objeto"/>
+        </Method>
+        <Method name="adicionar" returnType="void" visibility="public">
+          <Argument type="tipo_objeto" name="objeto"/>
+          <Argument type="int" name="index"/>
+        </Method>
+        <Method name="obter_indice" returnType="int" visibility="public">
+          <Argument type="tipo_objeto" name="objeto"/>
+        </Method>
+        <Method name="eh_vazio" returnType="boolean" visibility="public"/>
+        <Method name="mostrar_dados" returnType="void" visibility="public"/>
+        <Method name="ajustar_vetor" returnType="tipo_objeto[]" visibility="private">
+          <Argument type="int" name="controle"/>
+        </Method>
+        <Method name="obter_objeto_posicao" returnType="tipo_objeto" visibility="public">
+          <Argument type="int" name="index"/>
+        </Method>
+        <Method name="remover" returnType="boolean" visibility="public"/>
+        <Method name="remover" returnType="boolean" visibility="public">
+          <Argument type="int" name="index"/>
+        </Method>
+        <Method name="remover" returnType="boolean" visibility="public">
+          <Argument type="tipo_objeto" name="objeto"/>
+        </Method>
+        <Method name="remover_trecho" returnType="boolean" visibility="public">
+          <Argument type="int" name="index1"/>
+          <Argument type="int" name="index2"/>
+        </Method>
+        <Method name="modificar_posicao" returnType="boolean" visibility="public">
+          <Argument type="int" name="index"/>
+          <Argument type="tipo_objeto" name="objeto"/>
+        </Method>
+        <Method name="para_vetor" returnType="tipo_objeto[]" visibility="public"/>
+        <Method name="modificar_objeto" returnType="boolean" visibility="public">
+          <Argument type="tipo_objeto" name="objeto1"/>
+          <Argument type="tipo_objeto" name="objeto2"/>
+        </Method>
+        <Method name="eh_indice_valido" returnType="boolean" visibility="private">
+          <Argument type="int" name="index"/>
+        </Method>
+        <Method name="tamanho" returnType="int" visibility="public"/>
+        <Method name="para_texto" returnType="String" visibility="public"/>
+        <Method name="iterator" returnType="Iterator&lt;tipo_objeto&gt;" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Codificador" package="iftorrent.criptografia" visibility="public" xPosition="3414.0" yPosition="2879.0">
+      <Fields>
+        <Field name="inicializador_CBC" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="Codificador" returnType="boolean" visibility="public">
+          <Argument type="String" name="inicializador_CBC"/>
+        </Method>
+        <Method name="obter_inicializadorCBC" returnType="String" visibility="public"/>
+        <Method name="inserir_inicializadorCBC" returnType="boolean" visibility="public">
+          <Argument type="String" name="inicializador_CBC"/>
+        </Method>
+        <Method name="gera_inicializador_CBC" returnType="String" visibility="public"/>
+        <Method name="gera_texto" returnType="String" visibility="public">
+          <Argument type="int" name="tamanho"/>
+        </Method>
+        <Method name="gera_chave" returnType="SecretKeySpec" visibility="public">
+          <Argument type="String" name="texto_chave"/>
+          <Argument type="String" name="charset"/>
+        </Method>
+        <Method name="valida_chave" returnType="boolean" visibility="public">
+          <Argument type="String" name="chave"/>
+          <Argument type="String" name="charset"/>
+        </Method>
+        <Method name="codifica" returnType="byte[]" visibility="public">
+          <Argument type="String" name="texto"/>
+          <Argument type="String" name="texto_chave"/>
+          <Argument type="Charsets" name="charset"/>
+        </Method>
+        <Method name="codifica" returnType="byte[]" visibility="public">
+          <Argument type="String" name="texto"/>
+          <Argument type="String" name="texto_chave"/>
+          <Argument type="String" name="inicializador_CBC"/>
+          <Argument type="Charsets" name="charset"/>
+        </Method>
+        <Method name="decodifica" returnType="byte[]" visibility="public">
+          <Argument type="byte[]" name="texto_codificado"/>
+          <Argument type="String" name="texto_chave"/>
+          <Argument type="Charsets" name="charset"/>
+        </Method>
+        <Method name="decodifica" returnType="byte[]" visibility="public">
+          <Argument type="byte[]" name="texto_codificado"/>
+          <Argument type="String" name="texto_chave"/>
+          <Argument type="String" name="inicializador_CBC"/>
+          <Argument type="Charsets" name="charset"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Encriptado" package="iftorrent.criptografia" visibility="public" xPosition="3766.0" yPosition="3390.0">
+      <Fields>
+        <Field name="chave" type="String" visibility="private"/>
+        <Field name="inicializador_CBC" type="String" visibility="private"/>
+        <Field name="texto_plano" type="String" visibility="private"/>
+        <Field name="texto_codificado" type="byte[]" visibility="private"/>
+        <Field name="codificacao" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="package">
+          <Argument type="Charsets" name="charset"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="obter_codificação" returnType="String" visibility="public"/>
+        <Method name="inserir_codificação" returnType="void" visibility="public">
+          <Argument type="Charsets" name="charset"/>
+        </Method>
+        <Method name="valida_codificacao" returnType="boolean" visibility="public">
+          <Argument type="String" name="charset"/>
+        </Method>
+        <Method name="obter_texto_codificado" returnType="byte[]" visibility="public"/>
+        <Method name="inserir_texto_codificado" returnType="void" visibility="public">
+          <Argument type="byte[]" name="texto_codificado"/>
+        </Method>
+        <Method name="obter_chave" returnType="String" visibility="public"/>
+        <Method name="inserir_chave" returnType="void" visibility="public">
+          <Argument type="String" name="chave"/>
+        </Method>
+        <Method name="obter_cnicializador_CBC" returnType="String" visibility="public"/>
+        <Method name="inserir_inicializador_CBC" returnType="void" visibility="public">
+          <Argument type="String" name="inicializador_CBC"/>
+        </Method>
+        <Method name="obter_texto" returnType="String" visibility="public"/>
+        <Method name="inserir_texto" returnType="void" visibility="public">
+          <Argument type="String" name="texto"/>
+        </Method>
+        <Method name="mostrar_dados" returnType="String" visibility="public"/>
+        <Method name="hash" returnType="byte[]" visibility="public">
+          <Argument type="Algoritmos" name="algoritmo"/>
+        </Method>
+        <Method name="eh_igual" returnType="boolean" visibility="public">
+          <Argument type="Object" name="obj"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Hash" package="iftorrent.criptografia" visibility="public" xPosition="3336.0" yPosition="3994.0">
+      <Fields>
+        <Field name="alg" type="Algoritmos" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="digestor_MD_2" returnType="byte[]" visibility="public" isStatic="true">
+          <Argument type="byte[]" name="texto"/>
+        </Method>
+        <Method name="digestor_MD_4" returnType="byte[]" visibility="public" isStatic="true">
+          <Argument type="byte[]" name="texto"/>
+        </Method>
+        <Method name="digestor_MD_5" returnType="byte[]" visibility="public" isStatic="true">
+          <Argument type="byte[]" name="texto"/>
+        </Method>
+        <Method name="digestor_SHA_1" returnType="byte[]" visibility="public" isStatic="true">
+          <Argument type="byte[]" name="texto"/>
+        </Method>
+        <Method name="digestor_SHA_224" returnType="byte[]" visibility="public" isStatic="true">
+          <Argument type="byte[]" name="texto"/>
+        </Method>
+        <Method name="digestor_SHA_256" returnType="byte[]" visibility="public" isStatic="true">
+          <Argument type="byte[]" name="texto"/>
+        </Method>
+        <Method name="digestor_SHA_384" returnType="byte[]" visibility="public" isStatic="true">
+          <Argument type="byte[]" name="texto"/>
+        </Method>
+        <Method name="digestor_SHA_512" returnType="byte[]" visibility="public" isStatic="true">
+          <Argument type="byte[]" name="texto"/>
+        </Method>
+        <Method name="digestor_SHA_3_224" returnType="byte[]" visibility="public" isStatic="true">
+          <Argument type="byte[]" name="texto"/>
+        </Method>
+        <Method name="digestor_SHA_3_256" returnType="byte[]" visibility="public" isStatic="true">
+          <Argument type="byte[]" name="texto"/>
+        </Method>
+        <Method name="digestor_SHA_3_384" returnType="byte[]" visibility="public" isStatic="true">
+          <Argument type="byte[]" name="texto"/>
+        </Method>
+        <Method name="digestor_SHA_3_512" returnType="byte[]" visibility="public" isStatic="true">
+          <Argument type="byte[]" name="texto"/>
+        </Method>
+        <Method name="digestor_Skein_1024" returnType="byte[]" visibility="public" isStatic="true">
+          <Argument type="byte[]" name="texto"/>
+        </Method>
+        <Method name="digestor_Blake2b_160" returnType="byte[]" visibility="public" isStatic="true">
+          <Argument type="byte[]" name="texto"/>
+        </Method>
+        <Method name="digestor_Blake2b_256" returnType="byte[]" visibility="public" isStatic="true">
+          <Argument type="byte[]" name="texto"/>
+        </Method>
+        <Method name="digestor_Blake2b_384" returnType="byte[]" visibility="public" isStatic="true">
+          <Argument type="byte[]" name="texto"/>
+        </Method>
+        <Method name="digestor_Blake2b_512" returnType="byte[]" visibility="public" isStatic="true">
+          <Argument type="byte[]" name="texto"/>
+        </Method>
+        <Method name="digestor_RIPEMD_128" returnType="byte[]" visibility="public" isStatic="true">
+          <Argument type="byte[]" name="texto"/>
+        </Method>
+        <Method name="digestor_RIPEMD_160" returnType="byte[]" visibility="public" isStatic="true">
+          <Argument type="byte[]" name="texto"/>
+        </Method>
+        <Method name="digestor_RIPEMD_256" returnType="byte[]" visibility="public" isStatic="true">
+          <Argument type="byte[]" name="texto"/>
+        </Method>
+        <Method name="digestor_RIPEMD_320" returnType="byte[]" visibility="public" isStatic="true">
+          <Argument type="byte[]" name="texto"/>
+        </Method>
+        <Method name="hash" returnType="byte[]" visibility="public" isStatic="true">
+          <Argument type="Algoritmos" name="alg"/>
+          <Argument type="byte[]" name="texto"/>
+        </Method>
+        <Method name="hash" returnType="byte[]" visibility="public" isStatic="true">
+          <Argument type="String" name="texto"/>
+          <Argument type="Algoritmos" name="algoritmo"/>
+          <Argument type="Charsets" name="charset"/>
+        </Method>
+        <Method name="hash" returnType="byte[]" visibility="public" isStatic="true">
+          <Argument type="File" name="arquivo"/>
+          <Argument type="Algoritmos" name="algoritmo"/>
+          <Argument type="Charsets" name="charset"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="IntegridadeSHA1" package="iftorrent.criptografia" visibility="public" xPosition="1962.0" yPosition="130.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="arquivo_para_hash" returnType="byte[]" visibility="public">
+          <Argument type="File" name="arquivo"/>
+        </Method>
+        <Method name="string_para_hash" returnType="byte[]" visibility="public">
+          <Argument type="String" name="string"/>
+        </Method>
+        <Method name="bytes_para_hash" returnType="byte[]" visibility="public">
+          <Argument type="byte[]" name="bytes"/>
+        </Method>
+        <Method name="integridade_hashXarquivo" returnType="boolean" visibility="public">
+          <Argument type="byte[]" name="hash"/>
+          <Argument type="File" name="arquivo"/>
+        </Method>
+        <Method name="integridade_arquivoXarquivo" returnType="boolean" visibility="public">
+          <Argument type="File" name="arquivo1"/>
+          <Argument type="File" name="arquivo2"/>
+        </Method>
+        <Method name="base64" returnType="byte[]" visibility="public">
+          <Argument type="byte[]" name="vetor"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ConstantesCriptografia" package="iftorrent.criptografia" visibility="public" xPosition="3459.0" yPosition="4568.0">
+      <Fields>
+        <Field name="TAMAMHO_16" type="int" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="TAMAMHO_24" type="int" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="TAMAMHO_32" type="int" visibility="public" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Interface name="ManipuladorInterface" package="iftorrent.arquivos" visibility="public" xPosition="4180.0" yPosition="1388.0">
+      <Methods>
+        <Method name="copia" returnType="Manipulador" visibility="public"/>
+        <Method name="abrir" returnType="void" visibility="public"/>
+        <Method name="fechar" returnType="void" visibility="public"/>
+      </Methods>
+    </Interface>
+    <Interface name="ColecaoAbstrata" package="iftorrent.colecoes" visibility="public" xPosition="1608.0" yPosition="4852.0">
+      <Methods>
+        <Method name="tamanho" returnType="int" visibility="public"/>
+        <Method name="eh_vazio" returnType="boolean" visibility="public"/>
+        <Method name="adicionar" returnType="boolean" visibility="public">
+          <Argument type="tipo_objeto" name="objeto"/>
+        </Method>
+        <Method name="remover" returnType="boolean" visibility="public">
+          <Argument type="tipo_objeto" name="objeto"/>
+        </Method>
+        <Method name="modificar_objeto" returnType="boolean" visibility="public">
+          <Argument type="tipo_objeto" name="objeto1"/>
+          <Argument type="tipo_objeto" name="objeto2"/>
+        </Method>
+        <Method name="obter_indice" returnType="int" visibility="public">
+          <Argument type="tipo_objeto" name="objeto"/>
+        </Method>
+        <Method name="mostrar_dados" returnType="void" visibility="public"/>
+        <Method name="para_texto" returnType="String" visibility="public"/>
+        <Method name="para_vetor" returnType="tipo_objeto[]" visibility="public"/>
+      </Methods>
+    </Interface>
+    <Enum name="TiposFinalizacao" package="iftorrent.conexao" visibility="public" xPosition="742.0" yPosition="437.0">
+      <Literals>
+        <Literal name="DIE"/>
+        <Literal name="ONE_BREATHE"/>
+        <Literal name="GO_TO_BED"/>
+        <Literal name="FIRST_FINISH_THAT"/>
+      </Literals>
+    </Enum>
+    <Enum name="Modo" package="iftorrent.arquivos" visibility="public" xPosition="3137.0" yPosition="2126.0">
+      <Literals>
+        <Literal name="LEITURA"/>
+        <Literal name="LEITURA_ESCRITA"/>
+        <Literal name="REESCRITA"/>
+        <Literal name="REESCRITA_LEITURA"/>
+        <Literal name="ANEXACAO"/>
+        <Literal name="ANEXACAO_LEITURA"/>
+      </Literals>
+    </Enum>
+    <Enum name="Permissao" package="iftorrent.arquivos" visibility="public" xPosition="3899.0" yPosition="1388.0">
+      <Literals>
+        <Literal name="___"/>
+        <Literal name="__X"/>
+        <Literal name="_W_"/>
+        <Literal name="_WX"/>
+        <Literal name="R__"/>
+        <Literal name="R_X"/>
+        <Literal name="RW_"/>
+        <Literal name="RWX"/>
+      </Literals>
+    </Enum>
+    <Enum name="Charsets" package="iftorrent.criptografia" visibility="public" xPosition="4213.0" yPosition="2879.0">
+      <Literals>
+        <Literal name="BIG5"/>
+        <Literal name="CHARSET_BIG5_HKSCS"/>
+        <Literal name="CHARSET_EUC_JP"/>
+        <Literal name="CHARSET_EUC_KR"/>
+        <Literal name="CHARSET_GB18030"/>
+        <Literal name="CHARSET_GB2312"/>
+        <Literal name="CHARSET_GBK"/>
+        <Literal name="CHARSET_IBM00858"/>
+        <Literal name="CHARSET_IBM01140"/>
+        <Literal name="CHARSET_IBM01141"/>
+        <Literal name="CHARSET_IBM01142"/>
+        <Literal name="CHARSET_IBM01143"/>
+        <Literal name="CHARSET_IBM01144"/>
+        <Literal name="CHARSET_IBM01145"/>
+        <Literal name="CHARSET_IBM01146"/>
+        <Literal name="CHARSET_IBM01147"/>
+        <Literal name="CHARSET_IBM01148"/>
+        <Literal name="CHARSET_IBM01149"/>
+        <Literal name="CHARSET_IBM037"/>
+        <Literal name="CHARSET_IBM1026"/>
+        <Literal name="CHARSET_IBM1047"/>
+        <Literal name="CHARSET_IBM273"/>
+        <Literal name="CHARSET_IBM277"/>
+        <Literal name="CHARSET_IBM278"/>
+        <Literal name="CHARSET_IBM280"/>
+        <Literal name="CHARSET_IBM284"/>
+        <Literal name="CHARSET_IBM285"/>
+        <Literal name="CHARSET_IBM297"/>
+        <Literal name="CHARSET_IBM420"/>
+        <Literal name="CHARSET_IBM424"/>
+        <Literal name="CHARSET_IBM437"/>
+        <Literal name="CHARSET_IBM500"/>
+        <Literal name="CHARSET_IBM775"/>
+        <Literal name="CHARSET_IBM852"/>
+        <Literal name="CHARSET_IBM855"/>
+        <Literal name="CHARSET_IBM857"/>
+        <Literal name="CHARSET_IBM860"/>
+        <Literal name="CHARSET_IBM861"/>
+        <Literal name="CHARSET_IBM862"/>
+        <Literal name="CHARSET_IBM863"/>
+        <Literal name="CHARSET_IBM864"/>
+        <Literal name="CHARSET_IBM865"/>
+        <Literal name="CHARSET_IBM866"/>
+        <Literal name="CHARSET_IBM868"/>
+        <Literal name="CHARSET_IBM869"/>
+        <Literal name="CHARSET_IBM870"/>
+        <Literal name="CHARSET_IBM871"/>
+        <Literal name="CHARSET_IBM918"/>
+        <Literal name="CHARSET_IBM_THAI"/>
+        <Literal name="CHARSET_ISO_2022_CN"/>
+        <Literal name="CHARSET_ISO_2022_JP"/>
+        <Literal name="CHARSET_ISO_2022_KR"/>
+        <Literal name="CHARSET_ISO_8859_1"/>
+        <Literal name="CHARSET_ISO_8859_13"/>
+        <Literal name="CHARSET_ISO_8859_15"/>
+        <Literal name="CHARSET_ISO_8859_2"/>
+        <Literal name="CHARSET_ISO_8859_3"/>
+        <Literal name="CHARSET_ISO_8859_4"/>
+        <Literal name="CHARSET_ISO_8859_5"/>
+        <Literal name="CHARSET_ISO_8859_6"/>
+        <Literal name="CHARSET_ISO_8859_7"/>
+        <Literal name="CHARSET_ISO_8859_8"/>
+        <Literal name="CHARSET_ISO_8859_9"/>
+        <Literal name="CHARSET_JIS_X0201"/>
+        <Literal name="CHARSET_JIS_X0212_1990"/>
+        <Literal name="CHARSET_KOI8_R"/>
+        <Literal name="CHARSET_KOI8_U"/>
+        <Literal name="CHARSET_NOT_AVAILABLE"/>
+        <Literal name="CHARSET_SHIFT_JIS"/>
+        <Literal name="CHARSET_TIS_620"/>
+        <Literal name="CHARSET_US_ASCII"/>
+        <Literal name="CHARSET_UTF_16"/>
+        <Literal name="CHARSET_UTF_16BE"/>
+        <Literal name="CHARSET_UTF_16LE"/>
+        <Literal name="CHARSET_UTF_32"/>
+        <Literal name="CHARSET_UTF_32BE"/>
+        <Literal name="CHARSET_UTF_32LEUTF_32LE"/>
+        <Literal name="CHARSET_UTF_8"/>
+        <Literal name="CHARSET_WINDOWS_1250"/>
+        <Literal name="CHARSET_WINDOWS_1251"/>
+        <Literal name="CHARSET_WINDOWS_1252"/>
+        <Literal name="CHARSET_WINDOWS_1253"/>
+        <Literal name="CHARSET_WINDOWS_1254"/>
+        <Literal name="CHARSET_WINDOWS_1255"/>
+        <Literal name="CHARSET_WINDOWS_1256"/>
+        <Literal name="CHARSET_WINDOWS_1257"/>
+        <Literal name="CHARSET_WINDOWS_1258"/>
+        <Literal name="CHARSET_WINDOWS_31J"/>
+        <Literal name="CHARSET_X_BIG5_SOLARIS"/>
+        <Literal name="CHARSET_X_EUCJP_OPEN"/>
+        <Literal name="CHARSET_X_EUC_JP_LINUX"/>
+        <Literal name="CHARSET_X_EUC_TW"/>
+        <Literal name="CHARSET_X_IBM1006"/>
+        <Literal name="CHARSET_X_IBM1025"/>
+        <Literal name="CHARSET_X_IBM1046"/>
+        <Literal name="CHARSET_X_IBM1097"/>
+        <Literal name="CHARSET_X_IBM1098"/>
+        <Literal name="CHARSET_X_IBM1112"/>
+        <Literal name="CHARSET_X_IBM1122"/>
+        <Literal name="CHARSET_X_IBM1123"/>
+        <Literal name="CHARSET_X_IBM1124"/>
+        <Literal name="CHARSET_X_IBM1381"/>
+        <Literal name="CHARSET_X_IBM1383"/>
+        <Literal name="CHARSET_X_IBM33722"/>
+        <Literal name="CHARSET_X_IBM834"/>
+        <Literal name="CHARSET_X_IBM856"/>
+        <Literal name="CHARSET_X_IBM875"/>
+        <Literal name="CHARSET_X_IBM921"/>
+        <Literal name="CHARSET_X_IBM922"/>
+        <Literal name="CHARSET_X_IBM930"/>
+        <Literal name="CHARSET_X_IBM933"/>
+        <Literal name="CHARSET_X_IBM935"/>
+        <Literal name="CHARSET_X_IBM937"/>
+        <Literal name="CHARSET_X_IBM939"/>
+        <Literal name="CHARSET_X_IBM942"/>
+        <Literal name="CHARSET_X_IBM942C"/>
+        <Literal name="CHARSET_X_IBM943"/>
+        <Literal name="CHARSET_X_IBM943C"/>
+        <Literal name="CHARSET_X_IBM948"/>
+        <Literal name="CHARSET_X_IBM949"/>
+        <Literal name="CHARSET_X_IBM949C"/>
+        <Literal name="CHARSET_X_IBM950"/>
+        <Literal name="CHARSET_X_IBM964"/>
+        <Literal name="CHARSET_X_IBM970"/>
+        <Literal name="CHARSET_X_ISCII91"/>
+        <Literal name="CHARSET_X_ISO2022_CN_CNS"/>
+        <Literal name="CHARSET_X_ISO2022_CN_GB"/>
+        <Literal name="CHARSET_X_ISO_8859_11"/>
+        <Literal name="CHARSET_X_JIS0208"/>
+        <Literal name="CHARSET_X_JISAUTODETECT"/>
+        <Literal name="CHARSET_X_JOHAB"/>
+        <Literal name="CHARSET_X_MACARABIC"/>
+        <Literal name="CHARSET_X_MACCENTRALEUROPE"/>
+        <Literal name="CHARSET_X_MACCROATIAN"/>
+        <Literal name="CHARSET_X_MACCYRILLIC"/>
+        <Literal name="CHARSET_X_MACDINGBAT"/>
+        <Literal name="CHARSET_X_MACGREEK"/>
+        <Literal name="CHARSET_X_MACHEBREW"/>
+        <Literal name="CHARSET_X_MACICELAND"/>
+        <Literal name="CHARSET_X_MACROMAN"/>
+        <Literal name="CHARSET_X_MACROMANIA"/>
+        <Literal name="CHARSET_X_MACSYMBOL"/>
+        <Literal name="CHARSET_X_MACTHAI"/>
+        <Literal name="CHARSET_X_MACTURKISH"/>
+        <Literal name="CHARSET_X_MACUKRAINE"/>
+        <Literal name="CHARSET_X_MS950_HKSCS"/>
+        <Literal name="CHARSET_X_MSWIN_936"/>
+        <Literal name="CHARSET_X_PCK"/>
+        <Literal name="CHARSET_X_SJIS_0213"/>
+        <Literal name="CHARSET_X_WINDOWS_50220"/>
+        <Literal name="CHARSET_X_WINDOWS_50221"/>
+        <Literal name="CHARSET_X_WINDOWS_874"/>
+        <Literal name="CHARSET_X_WINDOWS_949"/>
+        <Literal name="CHARSET_X_WINDOWS_950"/>
+        <Literal name="CHARSET_X_WINDOWS_ISO2022JP"/>
+        <Literal name="CHARSET_x_IBM737"/>
+        <Literal name="CHARSET_x_IBM874"/>
+        <Literal name="CHARSET_x_UTF_16LE_BOM"/>
+        <Literal name="CHARSET_x_UTF_32BE_BOM"/>
+        <Literal name="CHARSET_x_UTF_32LE_BOM"/>
+      </Literals>
+    </Enum>
+    <Enum name="Algoritmos" package="iftorrent.criptografia" visibility="public" xPosition="3459.0" yPosition="3375.0">
+      <Literals>
+        <Literal name="MD2"/>
+        <Literal name="MD4"/>
+        <Literal name="MD5"/>
+        <Literal name="SHA_1"/>
+        <Literal name="SHA_224"/>
+        <Literal name="SHA_256"/>
+        <Literal name="SHA_384"/>
+        <Literal name="SHA_512"/>
+        <Literal name="SHA_3_224"/>
+        <Literal name="SHA_3_256"/>
+        <Literal name="SHA_3_384"/>
+        <Literal name="SHA_3_512"/>
+        <Literal name="SKEIN_1024"/>
+        <Literal name="BLAKE2B_160"/>
+        <Literal name="BLAKE2B_256"/>
+        <Literal name="BLAKE2B_384"/>
+        <Literal name="BLAKE2B_512"/>
+        <Literal name="RIPEMD128"/>
+        <Literal name="RIPEMD160"/>
+        <Literal name="RIPEMD256"/>
+        <Literal name="RIPEMD320"/>
+      </Literals>
+    </Enum>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="iftorrent.arquivos.Manipulador" target="iftorrent.arquivos.Permissao" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="barra_menu" source="iftorrent.gui.Comunicador" target="iftorrent.gui.barraMenu.BarraMenuControlador" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="socket" source="iftorrent.conexao.Par" target="iftorrent.conexao.SocketTCP" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="atalho" source="iftorrent.gui.configuracoesTeclasDeAtalho.TuplaAcaoAtalho" target="iftorrent.gui.configuracoesTeclasDeAtalho.Atalho" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="alg" source="iftorrent.criptografia.Hash" target="iftorrent.criptografia.Algoritmos" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="iftorrent.gui.barraLogoff.BarraLogoffControlador" target="iftorrent.gui.TuplaXY" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="iftorrent.gui.abasPropriedades.AbasPropriedadesControlador" target="iftorrent.gui.abasPropriedades.PropriedadesArquivos" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="hasher" source="iftorrent.conexao.GerenciadorPedacos" target="iftorrent.criptografia.IntegridadeSHA1" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="iftorrent.gui.Comunicador" target="iftorrent.gui.barraMenu.BarraMenuControlador" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="pares" source="iftorrent.colecoes.Mapa" target="iftorrent.colecoes.NodoMapa" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="Conjunto&lt;NodoMapa&gt;"/>
+    <UseRelation source="iftorrent.arquivos.ManipuladorTexto" target="iftorrent.arquivos.Manipulador" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="PAINEL_TAMANHO1" source="iftorrent.gui.abasPropriedades.AbasPropriedadesConstantes" target="iftorrent.gui.TuplaXY" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="requisicoes" source="iftorrent.conexao.Par" target="iftorrent.conexao.Requisicao" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Requisicao&gt;"/>
+    <UseRelation source="iftorrent.criptografia.Encriptado" target="iftorrent.criptografia.Charsets" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="barra_inferior" source="iftorrent.gui.Comunicador" target="iftorrent.gui.barraInferior.BarraInferiorControlador" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="iftorrent.gui.Comunicador" target="iftorrent.gui.janelaPrincipal.JanelaPrincipalControlador" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="iftorrent.gui.Comunicador" target="iftorrent.gui.barraDeFerramentas.BarraDeFerramentasControlador" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="iftorrent.gui.barraDeFerramentas.BarraDeFerramentasControlador" target="iftorrent.gui.TuplaXY" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="gerenciador_pedacos" source="iftorrent.conexao.GerenciadorPares" target="iftorrent.conexao.GerenciadorPedacos" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="iftorrent.criptografia.Encriptado" target="iftorrent.criptografia.Algoritmos" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="iftorrent.gui.ManipuladorImagem" target="iftorrent.gui.TuplaXY" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="ENTRADA_DE_TEXTO_TAMANHO1" source="iftorrent.gui.configuracoesTeclasDeAtalho.ConfiguracoesTeclasDeAtalhoConstantes" target="iftorrent.gui.TuplaXY" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="estatisticas" source="iftorrent.conexao.Par" target="iftorrent.conexao.EstatisticasPar" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="IMAGEM_TAMANHO1" source="iftorrent.gui.barraDeFerramentas.BarraDeFerramentasConstantes" target="iftorrent.gui.TuplaXY" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="iftorrent.gui.configuracoesTeclasDeAtalho.ConfiguracoesTeclasDeAtalhoControlador" target="iftorrent.gui.configuracoesTeclasDeAtalho.Atalho" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="janela_principal" source="iftorrent.gui.Comunicador" target="iftorrent.gui.janelaPrincipal.JanelaPrincipalControlador" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="BARRA_DE_PROGRESSO_TAMANHO1" source="iftorrent.gui.abasPropriedades.AbasPropriedadesConstantes" target="iftorrent.gui.TuplaXY" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="IMAGEM_TAMANHO2" source="iftorrent.gui.barraDeFerramentas.BarraDeFerramentasConstantes" target="iftorrent.gui.TuplaXY" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="iftorrent.colecoes.Conjunto" target="iftorrent.colecoes.ListaEncadeada"/>
+    <UseRelation source="iftorrent.arquivos.ManipuladorInterface" target="iftorrent.arquivos.Manipulador" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="limitador" source="iftorrent.conexao.GerenciadorPares" target="iftorrent.conexao.Limitador" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="servidor" source="iftorrent.conexao.MonitorTCP" target="iftorrent.conexao.ServidorTCP" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="iftorrent.gui.abasPropriedades.AbasPropriedadesControlador" target="iftorrent.gui.abasPropriedades.PropriedadesRastreadores" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="iftorrent.gui.Comunicador" target="iftorrent.gui.barraLogoff.BarraLogoffControlador" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="iftorrent.gui.Comunicador" target="iftorrent.gui.janelaPrincipal.JanelaPrincipalMain" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="iftorrent.gui.Comunicador" target="iftorrent.gui.menuPrincipal.MenuPrincipalControlador" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="iftorrent.colecoes.ListaEncadeada" target="iftorrent.colecoes.ColecaoAbstrata"/>
+    <HasRelation name="gerenciador_disco" source="iftorrent.conexao.GerenciadorPedacos" target="iftorrent.arquivos.GerenciadorDisco" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="iftorrent.colecoes.Mapa" target="iftorrent.colecoes.Lista" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="monitor" source="iftorrent.conexao.ServidorTCP" target="iftorrent.conexao.MonitorTCP" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="abas_propriedades" source="iftorrent.gui.Comunicador" target="iftorrent.gui.abasPropriedades.AbasPropriedadesControlador" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="iftorrent.gui.Comunicador" target="iftorrent.gui.barraInferior.BarraInferiorControlador" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="iftorrent.gui.configuracoesTeclasDeAtalho.TuplaAcaoAtalho" target="iftorrent.gui.configuracoesTeclasDeAtalho.Atalho" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="gerenciador" source="iftorrent.conexao.MonitorTCP" target="iftorrent.conexao.GerenciadorPares" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="BOTAO_TAMANHO1" source="iftorrent.gui.barraDeFerramentas.BarraDeFerramentasConstantes" target="iftorrent.gui.TuplaXY" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="barra_lateral" source="iftorrent.gui.Comunicador" target="iftorrent.gui.barraLateral.BarraLateralControlador" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="monitor" source="iftorrent.conexao.GerenciadorPares" target="iftorrent.conexao.MonitorTCP" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="pares" source="iftorrent.conexao.GerenciadorPares" target="iftorrent.conexao.Par" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Par&gt;"/>
+    <HasRelation name="menu_principal" source="iftorrent.gui.Comunicador" target="iftorrent.gui.menuPrincipal.MenuPrincipalControlador" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="iftorrent.gui.abasPropriedades.PropriedadesArquivos" target="iftorrent.gui.TuplaXY" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="IMAGEM_TAMANHO1" source="iftorrent.gui.barraLogoff.BarraLogoffConstantes" target="iftorrent.gui.TuplaXY" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="iftorrent.colecoes.Mapa" target="iftorrent.colecoes.Conjunto" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="JANELA_TECLAS_DE_ATALHO_TAMANHO1" source="iftorrent.gui.barraMenu.BarraMenuConstantes" target="iftorrent.gui.TuplaXY" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="proximo" source="iftorrent.colecoes.NodoLista" target="iftorrent.colecoes.NodoLista" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="NodoLista"/>
+    <HasRelation name="arquivo" source="iftorrent.arquivos.Logger" target="iftorrent.arquivos.ManipuladorTexto" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="iftorrent.colecoes.Lista" target="iftorrent.colecoes.ColecaoAbstrata"/>
+    <UseRelation source="iftorrent.criptografia.Hash" target="iftorrent.criptografia.Algoritmos" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="iftorrent.arquivos.ManipuladorBinario" target="iftorrent.arquivos.Manipulador"/>
+    <HasRelation name="CAMPO_DE_TEXTO_TAMANHO1" source="iftorrent.gui.barraDeFerramentas.BarraDeFerramentasConstantes" target="iftorrent.gui.TuplaXY" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="tabela" source="iftorrent.gui.configuracoesTeclasDeAtalho.ConfiguracoesTeclasDeAtalhoControlador" target="iftorrent.gui.configuracoesTeclasDeAtalho.TuplaAcaoAtalho" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="barra_logoff" source="iftorrent.gui.Comunicador" target="iftorrent.gui.barraLogoff.BarraLogoffControlador" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="JANELA_TAMANHO1" source="iftorrent.gui.janelaPrincipal.JanelaPrincipalConstantes" target="iftorrent.gui.TuplaXY" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="iftorrent.colecoes.ListaEncadeada" target="iftorrent.colecoes.Lista" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="iftorrent.arquivos.ManipuladorBinario" target="iftorrent.arquivos.Manipulador" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="iftorrent.texto.StringCustom" target="iftorrent.texto.StringCustom" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="BOTAO_TAMANHO2" source="iftorrent.gui.configuracoesTeclasDeAtalho.ConfiguracoesTeclasDeAtalhoConstantes" target="iftorrent.gui.TuplaXY" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="iftorrent.colecoes.NodoLista" target="iftorrent.colecoes.Lista" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="lista_de_rastreadores" source="iftorrent.gui.abasPropriedades.AbasPropriedadesControlador" target="iftorrent.gui.abasPropriedades.PropriedadesRastreadores" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="HashMap&lt;String, List&lt;PropriedadesRastreadores&gt;&gt;"/>
+    <UseRelation source="iftorrent.conexao.SocketTCP" target="iftorrent.conexao.TiposFinalizacao" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="BOTAO_TAMANHO1" source="iftorrent.gui.configuracoesTeclasDeAtalho.ConfiguracoesTeclasDeAtalhoConstantes" target="iftorrent.gui.TuplaXY" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="iftorrent.arquivos.Arquivo" target="iftorrent.arquivos.Permissao" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="lista_de_arquivos" source="iftorrent.gui.abasPropriedades.AbasPropriedadesControlador" target="iftorrent.gui.abasPropriedades.PropriedadesArquivos" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="HashMap&lt;String, List&lt;PropriedadesArquivos&gt;&gt;"/>
+    <HasRelation name="conector_tracker" source="iftorrent.conexao.GerenciadorPares" target="iftorrent.conexao.ConectorRastreador" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="barra_de_ferramentas" source="iftorrent.gui.Comunicador" target="iftorrent.gui.barraDeFerramentas.BarraDeFerramentasControlador" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="iftorrent.gui.Comunicador" target="iftorrent.gui.configuracoesTeclasDeAtalho.ConfiguracoesTeclasDeAtalhoControlador" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="iftorrent.gui.Comunicador" target="iftorrent.gui.barraLateral.BarraLateralControlador" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="iftorrent.arquivos.Manipulador" target="iftorrent.arquivos.ManipuladorInterface"/>
+    <HasRelation name="main" source="iftorrent.gui.Comunicador" target="iftorrent.gui.janelaPrincipal.JanelaPrincipalMain" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="iftorrent.criptografia.Codificador" target="iftorrent.criptografia.Charsets" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="modo" source="iftorrent.arquivos.Manipulador" target="iftorrent.arquivos.Modo" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="iftorrent.conexao.SocketUDP" target="iftorrent.conexao.TiposFinalizacao" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="iftorrent.gui.Comunicador" target="iftorrent.gui.abasPropriedades.AbasPropriedadesControlador" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="iftorrent.arquivos.ManipuladorTexto" target="iftorrent.arquivos.Manipulador"/>
+    <HasRelation name="configuracoes_teclas_de_atalho" source="iftorrent.gui.Comunicador" target="iftorrent.gui.configuracoesTeclasDeAtalho.ConfiguracoesTeclasDeAtalhoControlador" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

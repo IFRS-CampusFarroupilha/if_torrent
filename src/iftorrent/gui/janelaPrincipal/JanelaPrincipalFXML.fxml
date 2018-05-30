@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!--
+   * Author: Eduardo Toffolo
+   * Author: Leonardo Bortolini
+  -->
+
+<!-- Painel que junta e organiza todos os componentes da GUI -->
+<VBox fx:id="painel1" 
+      xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="iftorrent.gui.janelaPrincipal.JanelaPrincipalControlador">
+    <children>
+        <!-- Inclui a barra menu no topo da aplicação -->
+        <fx:include fx:id="barra_menu" source="/iftorrent/gui/barraMenu/BarraMenuFXML.fxml" />
+        <!-- Painel para organizar os componentes entre a barra menu e a barra inferior -->
+        <HBox fx:id="painel2">
+            <children>
+                <!-- Inclui a barra lateral no lado esquerdo da apliacação -->
+                <fx:include fx:id="barra_lateral" source="/iftorrent/gui/barraLateral/BarraLateralFXML.fxml" />
+                <!-- Painel que organiza os componentes principais da aplicação -->
+                <VBox fx:id="painel3">
+                    <children>
+                        <!-- Inclui a barra de ferramentas -->
+                        <fx:include fx:id="barra_de_ferramentas" source="/iftorrent/gui/barraDeFerramentas/BarraDeFerramentasFXML.fxml" />
+                        <!-- Painel que organiza a área de exibição dos arquivos torrents e as suas propriedade -->
+                        <VBox fx:id="painel4">
+                            <children>
+                                <!-- Inclui o menu principal -->
+                                <fx:include fx:id="menu_principal" source="/iftorrent/gui/menuPrincipal/MenuPrincipalFXML.fxml" />
+                                <!-- Inclui as abas de propriedades referentes a um arquivo torrent -->
+                                <fx:include fx:id="abas_propriedades" source="/iftorrent/gui/abasPropriedades/AbasPropriedadesFXML.fxml" />
+                            </children>
+                        </VBox>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+        <!-- Inclui a barra inferior na parte de baixo da aplicação -->
+        <fx:include fx:id="barra_inferior" source="/iftorrent/gui/barraInferior/BarraInferiorFXML.fxml" />
+    </children>
+</VBox>

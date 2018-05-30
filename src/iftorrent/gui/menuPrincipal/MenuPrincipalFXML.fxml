@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox stylesheets="/iftorrent/gui/menuPrincipal/MenuPrincipalCSS.css"
+      xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="iftorrent.gui.menuPrincipal.MenuPrincipalControlador">
+    <children>
+        <TableView fx:id="tabela">
+            <columns>
+                <TableColumn fx:id="nome" text="Nome" />
+                <TableColumn fx:id="tamanho" text="Tamanho" />
+                <TableColumn fx:id="falta" text="Falta" />
+                <TableColumn fx:id="downloaded" text="Download" />
+                <TableColumn fx:id="uploaded" text="Upload" />
+                <TableColumn fx:id="estado" text="Estado" />
+                <TableColumn fx:id="progresso" text="Progresso" />
+            </columns>
+        </TableView>
+    </children>
+</HBox>

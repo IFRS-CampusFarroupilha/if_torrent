@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!--
+   * Author: Eduardo Toffolo
+  -->
+
+<!-- Painel que adiciona o botão e no qual é inserido outro painel que contém as opções do menu -->
+<HBox xmlns:fx="http://javafx.com/fxml/1" 
+      xmlns="http://javafx.com/javafx/8"  fx:id="menu" 
+      fx:controller="iftorrent.gui.barraLogoff.BarraLogoffControlador">
+    <children>
+        <!-- Botão para expandir o menu -->
+        <Button fx:id="botao_expandir" onAction="#mostrar_ou_ocultar" />
+    </children>
+</HBox>

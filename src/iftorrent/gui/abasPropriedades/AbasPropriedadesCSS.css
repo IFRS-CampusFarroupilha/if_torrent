@@ -1,0 +1,72 @@
+/* 
+ * Author: Eduardo Toffolo
+ *
+ * Arquivo css para modificar as características dos componentes das abas de 
+ * propriedades
+ */
+
+/*
+ * Objeto: ScrollBar
+ * Modifica o tamanho das margens e aumenta a largura da barra de rolagem
+ */
+.scroll-bar {
+    -fx-padding: 0 2 0 2;
+    -fx-font-size: 15px;
+}
+
+/*
+ * Objeto: TableColumn
+ * Modifica o tamanho fonte do conteúdo de todas as colunas das tabelas
+ */
+.table-column {
+    -fx-font-size: 12;
+}
+
+/*
+ * Objeto: TableColumn
+ * Modifica o alinhamento do conteúdo de colunas específicas
+ */
+#coluna_info {
+    -fx-alignment: center;
+}
+
+/*
+ * Objeto: Label
+ * Modifica a altura e o tamanho da fonte do conteúdo de labels específicos
+ */
+#label1_info {
+    -fx-font-size: 14;
+    -fx-min-height: 27;
+}
+
+/*
+ * Objeto: VBox
+ * Modifica o tamanho das margens de uma vbox específica
+ */
+#painel_info {
+    -fx-padding: 10 10 10 10 ;
+}
+
+/*
+ * Objeto: XYChart.Series
+ * Modifica a cor da primeira linha inserida no gráfico
+ */
+.default-color0.chart-series-line { -fx-stroke: palegreen; }
+
+/*
+ * Objeto: XYChart.Series
+ * Modifica a cor da segunda linha inserida no gráfico
+ */
+.default-color1.chart-series-line { -fx-stroke: lightskyblue; }
+
+/*
+ * Objeto: XYChart.Data
+ * Modifica a cor de fundo e de borda dos pontos da primeira linha inserida no gráfico
+ */
+.default-color0.chart-line-symbol { -fx-background-color: palegreen, white; }
+
+/*
+ * Objeto: XYChart.Data
+ * Modifica a cor de fundo e de borda dos pontos da segunda linha inserida no gráfico
+ */
+.default-color1.chart-line-symbol { -fx-background-color: lightskyblue, white; }

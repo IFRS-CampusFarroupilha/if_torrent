@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!--
+   * Author: Eduardo Toffolo
+  -->
+<!-- Painel para organizar a janela de configuração de teclas de atalho -->
+
+<VBox fx:id="painel" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iftorrent.gui.configuracoesTeclasDeAtalho.ConfiguracoesTeclasDeAtalhoControlador">
+    <children>
+        <!-- Painel qeu fica no centro da janela para inserir a tabela -->
+        <HBox fx:id="conteudo">
+           <children>
+               <!-- Tabela que possui uma descrição da ação e um campo para inserção do atalho para a ação -->
+               <TableView fx:id="tabela">
+                   <columns>
+                       <!-- Coluna que contém as descrições das ações -->
+                       <TableColumn fx:id="opcoes" />
+                       <!-- Coluna que contém os campos para inserção dos atalhos -->
+                       <TableColumn fx:id="atalhos" editable="false" />
+                   </columns>
+               </TableView>
+           </children>
+        </HBox>
+        <!-- Painel para inserir os botões -->
+        <HBox fx:id="barra_inferior">
+           <children>
+               <!-- Botão para salvar as modificações feitas -->
+               <Button fx:id="salvar" />
+               <!-- Botão para descartar as modificações feitas -->
+               <Button fx:id="cancelar" onAction="#cancelar" />
+           </children>
+        </HBox>
+    </children>
+</VBox>

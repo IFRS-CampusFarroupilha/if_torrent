@@ -1,0 +1,98 @@
+/* 
+ * Author: Eduardo Toffolo
+ *
+ * Arquivo css para modificar as características dos componentes da barra de 
+ * ferramentas 
+ */
+
+/*
+ * Objeto: HBox
+ * Modifica margem à direita de uma hbox específica
+ */
+#caixa_horizontal2 {
+    -fx-padding: 0 5 0 0; 
+}
+
+/*
+ * Objeto: Button
+ * Modifica a cor da borda e de fundo de todos botões
+ */
+.button {
+    -fx-border-color: transparent;
+    -fx-background-color: transparent;
+}
+
+/*
+ * Objeto: Button
+ * Modifica a cor do fundo de um botão enquanto o cursor estiver posicionado 
+ * sobre o mesmo
+ */
+.button:hover {
+    -fx-background-color: #BBBBBB;
+}
+
+/*
+ * Objeto: Button
+ * Modifica a cor do fundo de um botão enquanto ele é pressionado
+ */
+.button:pressed {
+    -fx-background-color: white;
+}
+
+/*
+ * Objeto: Button
+ * Modifica a cor e o arredondamento da borda de um botão enquanto ele está 
+ * selecionado
+ */
+.button:focused {
+    -fx-border-color: transparent;
+    -fx-border-radius: 7px;
+}
+
+/*
+ * Objeto: Button
+ * Modifica a opacidade de um botão enquanto ele está desabilitado
+ */
+.button:disabled {
+    -fx-opacity: 0.4;
+}
+
+/*
+ * Objeto: Button
+ * Modifica a cor de fundo e de borda para transparente do botão para a barra 
+ * de pesquisas
+ */
+#icone_barra_de_pesquisa {
+    -fx-border-color: transparent;
+    -fx-background-color: transparent;
+}
+
+/*
+ * Objeto: Button
+ * Modifica a cor de fundo e de borda para transparente do botão para a barra 
+ * de pesquisas enquanto o cursor estiver posicionado sobre o mesmo 
+ */
+#icone_barra_de_pesquisa:hover {
+    -fx-border-color: transparent;
+    -fx-background-color: transparent;
+}
+
+/*
+ * Objeto: Button
+ * Modifica a cor de fundo e de borda para transparente do botão para a barra 
+ * de pesquisas enquanto o mesmo estiver pressionado
+ */
+#icone_barra_de_pesquisa:pressed {
+    -fx-border-color: transparent;
+    -fx-background-color: transparent;
+}
+
+/*
+ * Objeto: Button
+ * Modifica a cor de fundo e de borda para transparente do botão para a barra 
+ * de pesquisas enquanto o mesmo estiver selecionado
+ */
+#icone_barra_de_pesquisa:focused {
+    -fx-border-color: transparent;
+    -fx-background-color: transparent;
+}
