@@ -1,7 +1,7 @@
-![Logo do IFTorrent](http://web.farroupilha.ifrs.edu.br/paginas/~temp1/imagens/IFTorrent.png =600x)
+<img src="http://web.farroupilha.ifrs.edu.br/paginas/~temp1/imagens/IFTorrent.png" width="600">
 
 # IFTorrent - Compartilhando Arquivo e Ideias 
-![Versão](http://web.farroupilha.ifrs.edu.br/paginas/~temp1/imagens/versao.png =x20) [![Documentação](http://web.farroupilha.ifrs.edu.br/paginas/~temp1/imagens/wiki.png =x20)](http://web.farroupilha.ifrs.edu.br/iftorrentwiki/index.php/P%C3%A1gina_principal) [![Contate-nos](http://web.farroupilha.ifrs.edu.br/paginas/~temp1/imagens/contato.png =x20)](mailto:iftorrent@farroupilha.ifrs.edu.br)
+<img src="http://web.farroupilha.ifrs.edu.br/paginas/~temp1/imagens/versao.png" height="20"> [<img src="http://web.farroupilha.ifrs.edu.br/paginas/~temp1/imagens/wiki.png" height="20">](http://web.farroupilha.ifrs.edu.br/iftorrentwiki/index.php/P%C3%A1gina_principal) [<img src="http://web.farroupilha.ifrs.edu.br/paginas/~temp1/imagens/contato.png" height="20">](mailto:iftorrent@farroupilha.ifrs.edu.br)
 
 O projeto IFTorrent tem por finalidade a criação de um cliente torrent para o compartilhamento de arquivos nos _campi_ da rede federal de institutos de educação, ciência e tecnologia.
 
@@ -11,20 +11,20 @@ Para mais detalhes, acesse a nossa documentação [aqui](http://web.farroupilha.
 
 ### Download 
 
-Sinta-se livre para baixar o código-fonte da nossa aplicação no [link abaixo](http://link-para-a-pagina-no-GitHub.com). *Obs: necessita da IDE _NetBeans_ e do _Java Development Kit_ instalados.
+Sinta-se livre para baixar o código-fonte da nossa aplicação no [link abaixo](https://github.com/IFRS-CampusFarroupilha/-if_torrent). *Obs: necessita da IDE _NetBeans_ e do _Java Development Kit_ instalados.
 
-	http://link-para-a-pagina-no-GitHub.com
+	https://github.com/IFRS-CampusFarroupilha/-if_torrent
 	
 Ou, se preferir, baixe apenas o cliente (sem instalação) no [seguinte link](http://link-para-download-do-cliente.com):
 
-	http://link-para-download-do-cliente.com
+	http://web.farroupilha.ifrs.edu.br/paginas/~temp1/IFTorrent.rar
 
 ### Requisitos de Sistema
 
 Requisito | Mínimo | Recomendado
 ------------ | ------------- | -------------
 Sistema Operacional | Windows | Windows
-Processador | não sei como medir isso | não sei como medir isso
+Processador | Intel Core i7-5500U | Intel Core i9-7900x
 Memória RAM | 2GB | 8GB
 Espaço em Disco | 9MB | 9MB
 Placa de Vídeo | nenhum | nenhum
@@ -39,7 +39,7 @@ Em caso de algum erro ou dúvida, o cliente torrent possui a opção para contat
 
 ### Desenvolvimento
 
-O projeto foi desenvolvido principalmente em Java através da IDE NetBeans. Para a implementação da parte _Web_ não houve um editor fixo, permitindo que os integrantes da equipe escolhessem qual usar.
+O projeto foi desenvolvido principalmente em Java através da **IDE NetBeans**. Para a implementação da parte _Web_ não houve um editor fixo, permitindo que os integrantes da equipe escolhessem qual usar.
 
 Foram usadas também algumas ferramentas para auxiliar o desenvolvimento do projeto:
 
@@ -69,9 +69,11 @@ A equipe optou pela __Metodologia Ágil__ como forma de desenvolvimento do clien
 
 ### Sobre o cliente
 
-Para facilitar, no próprio cliente é disponibilizado um pequeno tutorial de uso do programa. Para acessá-lo, basta clicar na opção __"Ajuda"__ no menu superior a após selecionar a opção __"Fazer um Tour"__. Como maneira alternativa, também é possível iniciar o _tour_ através do conjunto de teclas _**"Ctrl + F1"**_.
+Para facilitar, no próprio cliente é disponibilizado um pequeno tutorial de uso do programa. Para acessá-lo, basta clicar na opção __"Ajuda"__ no menu superior e após selecionar a opção __"Fazer um Tour"__. Como maneira alternativa, também é possível iniciar o _tour_ através do conjunto de teclas _**"Ctrl + F1"**_.
 
-![Interface do Cliente](http://web.farroupilha.ifrs.edu.br/paginas/~temp1/imagens/cliente.png "Interface gráfica do cliente torrent" =700x)_Interface do cliente Torrent_
+<img src="http://web.farroupilha.ifrs.edu.br/paginas/~temp1/imagens/cliente.png" width="700">
+
+_Interface do cliente Torrent_
 
 ### Sobre o site
 
@@ -79,26 +81,50 @@ O site para _download_  de _arquivos torrents_ se encontra no [link abaixo](http
 
 	http://web.farroupilha.ifrs.edu.br/paginas/~iftorrent/
 
-![Interface do Site](http://web.farroupilha.ifrs.edu.br/paginas/~temp1/imagens/site.png "Interface do site" =700x)
+<img src="http://web.farroupilha.ifrs.edu.br/paginas/~temp1/imagens/site.png" width="700">
+
 _Interface do site_
 
 ### Licença
 
-A ver ----------------------------------------
+O nosso cliente torrent é distribuído segundo a licença  [**The MIT License**](https://mit-license.org/) (Licença MIT). Abaixo segue a tradução literal da licença:
+
+	Copyright © 2018 <detentores de direitos autorais>
+	
+	A permissão é concedida gratuitamente a qualquer pessoa que obtenha uma cópia deste 
+	software e arquivos de documentação associados (o “Software”), para lidar com o 
+	Software sem restrições, incluindo, sem limitação, os direitos de uso, cópia, 
+	modificação, fusão, publicação, distribuição, sublicenciar e/ou vender cópias do 
+	Software, e permitir que pessoas a quem o Software esteja fornecido para tal, 
+	sujeito às seguintes condições:
+	
+	O aviso de copyright acima e este aviso de permissão devem ser incluídos em todas 
+	as cópias ou partes substanciais do Software.
+	
+	O SOFTWARE É FORNECIDO “COMO ESTÁ”, SEM GARANTIA DE QUALQUER TIPO, EXPRESSA OU 
+	IMPLÍCITA, INCLUINDO NÃO LIMITADA ÀS GARANTIAS DE COMERCIALIZAÇÃO, ADEQUAÇÃO A UM 
+	FIM ESPECÍFICO E NÃO INFRAÇÃO. EM NENHUMA CIRCUNSTÂNCIA, OS AUTORES OU OS TITULARES 
+	DOS DIREITOS AUTORAIS SERÃO RESPONSÁVEIS POR QUALQUER RECLAMAÇÃO, DANOS OU OUTRAS 
+	RESPONSABILIDADES, SEJA EM AÇÃO DE CONTRATO, DELITO OU OUTRO, DECORRENTE DE, FORA OU 
+	RELACIONADA COM O SOFTWARE OU O USO OU OUTRAS CONCESSÕES NO SOFTWARE.
+	
+Para acessar o conteúdo original da licença (em inglês) acesse o [seguinte link](https://mit-license.org/):
+	
+	https://mit-license.org/
 
 ### Equipe
 
 A nossa equipe é composta, atualmente, por nove integrantes: 
 
-* __*Rafael Vieira Coelho*__ (professor orientador do projeto);
+* __*[Rafael Vieira Coelho](https://github.com/rafael-vieira-coelho)*__ (professor orientador do projeto);
 * __*Gustavo Rodrigo Tausendfreund*__ (profissional de T.I.);
 * __*Eduardo Balbinot*__ (profissional de T.I.);
-* __*Eduardo Toffolo*__ (aluno voluntário);
+* __*[Eduardo Toffolo](https://github.com/EToffolo)*__ (aluno voluntário);
 * __*Leonardo Bortolini*__ (aluno voluntário);
-* __*Gabriel Muller*__ (aluno voluntário);
-* __*Garrenlus de Souza*__ (aluno voluntário);
-* __*Guilherme Giordani*__ (aluno voluntário);
-* __*Otávio Farinon*__ (aluno voluntário).
+* __*[Gabriel Muller](https://github.com/Gabriel2501)*__ (aluno voluntário);
+* __*[Garrenlus de Souza](https://github.com/GarrenSouza)*__ (aluno voluntário);
+* __*[Guilherme Giordani](https://github.com/GuilhermeDaBolsa)*__ (aluno voluntário);
+* __*[Otávio Farinon](https://github.com/ovfarinon)*__ (aluno voluntário).
 
 Há alguns membros que não integram mais a equipe, mas que merecem créditos:
 
@@ -111,4 +137,4 @@ Para qualquer problema que nosso cliente ou nosso site possa vir a gerar, pedimo
 
 E-mail: [iftorrent@farroupilha.ifrs.edu.br](mailto:iftorrent@farroupilha.ifrs.edu.br)
 
-![Logo do IFRS - Campus Farroupilha](http://web.farroupilha.ifrs.edu.br/paginas/~temp1/imagens/ifrs.png "Logo do IFRS - Campus Farroupilha" =1000x)
+<img src="http://web.farroupilha.ifrs.edu.br/paginas/~temp1/imagens/ifrs.png" width="1000">
