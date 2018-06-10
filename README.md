@@ -15,7 +15,7 @@ Sinta-se livre para baixar o código-fonte da nossa aplicação no [link abaixo]
 
 	https://github.com/IFRS-CampusFarroupilha/-if_torrent
 	
-Ou, se preferir, baixe apenas o cliente (sem instalação) no [seguinte link](http://link-para-download-do-cliente.com):
+Ou, se preferir, baixe apenas o cliente (sem instalação) no [seguinte link](http://web.farroupilha.ifrs.edu.br/paginas/~temp1/IFTorrent.rar):
 
 	http://web.farroupilha.ifrs.edu.br/paginas/~temp1/IFTorrent.rar
 
